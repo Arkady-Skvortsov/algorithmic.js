@@ -1,4 +1,4 @@
-enum dataType {
+enum dataStructureEnum {
   "STACK",
   "GRAPH",
   "QUEUE",
@@ -6,7 +6,6 @@ enum dataType {
   "LINKED-LIST",
   "BINARY-TREE",
   "HASH-TABLE",
-  "TRIE",
 }
 
-export { dataType };
+export { dataStructureEnum };

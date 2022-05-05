@@ -1,4 +1,4 @@
-enum bigONotation {
+enum bigONotationEnum {
   "O(n)",
   "O(n^2)",
   "O(log n)",
@@ -6,4 +6,4 @@ enum bigONotation {
   "O(n!)",
 }
 
-export { bigONotation };
+export { bigONotationEnum };

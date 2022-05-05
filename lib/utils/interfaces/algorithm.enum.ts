@@ -1,4 +1,4 @@
-enum algorithm {
+enum algorithmEnum {
   "LINEAR-SORT",
   "BINARY-SORT",
   "SELECTION-SORT",
@@ -16,4 +16,4 @@ enum algorithm {
   "CACHING",
 }
 
-export { algorithm };
+export { algorithmEnum };

@@ -9,31 +9,31 @@ Big O notation OR O(n)[as an example] - it's .....
 Wikipedia - https://en.wikipedia.org/wiki/Big_O_notation
 Time complexity - https://en.wikipedia.org/wiki/Time_complexity
 
-# N(O) - Linear time
+# O(n) - Linear time
 
 ```ts
 
 ```
 
-# N(O^2) -
+# O(n^2) -
 
 ```ts
 
 ```
 
-# N(log O) -
+# O(log n) -
 
 ```ts
 
 ```
 
-# N(O log O) -
+# O(n log n) -
 
 ```ts
 
 ```
 
-# N(n!) -
+# O(n!) -
 
 ```ts
 

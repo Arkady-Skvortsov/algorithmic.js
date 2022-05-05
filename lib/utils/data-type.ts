@@ -1,5 +1,0 @@
-class DataType {
-  constructor() {}
-
-  create() {}
-}
