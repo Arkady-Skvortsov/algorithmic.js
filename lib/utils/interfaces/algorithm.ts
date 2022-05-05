@@ -1,0 +1,19 @@
+enum algorithm {
+  "LINEAR-SORT",
+  "BINARY-SORT",
+  "SELECTION-SORT",
+  "BUBBLE-SORT",
+  "QUICK-SORT",
+  "MERGE-SORT",
+  "SHELL-SORT",
+  "HEAP-SORT",
+  "SMOOTH-SORT",
+  "PATIENCE-SORT",
+  "RADIX-SORT",
+  "COUNTING-SORT",
+  "DIJKSTRAS-ALGORITHM",
+  "RECURSIVE-TRAVERSAL-BINARY-TREE",
+  "CACHING",
+}
+
+export { algorithm };
