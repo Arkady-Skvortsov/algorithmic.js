@@ -2,11 +2,16 @@
 
 # About
 
-I noticed that we (JS) do not have a normal LIBRARY for using algorithms, for example: 1) https://www.npmjs.com/package/algorithm-js, 2) https://www.npmjs.com/package/algorithm-tool, 3) https://www.npmjs.com/package/algorithm-collection, 4) ; These are only experiments and some do not have any tests or proper documentation or just not a very good interface; So I decided to fix it by creating algorithm.js; With it, you will use algorithms / data structures with a good interface, ready-made templates and documentation (so that you can figure out and understand how most popular algorithms and data structures work, what calculations are better to take for each algorithm and why the author did it the way he did)
-
 [Algorithms](https://github.com/Arkady-Skvortsov/value-object.js/blob/main/VALUE-OBJECT.md)
-[Data Structures](https://github.com/Arkady-Skvortsov/value-object.js/blob/main/VALUE-OBJECT.md)
-[BIG-O-NOTATION](https://github.com/Arkady-Skvortsov/value-object.js/blob/main/VALUE-OBJECT.md)
+[Data Structures](https://github.com/Arkady-Skvortsov/value-object.js/blob/main/VALUE-OBJECT.md)<br />
+[BIG-O-NOTATION](https://github.com/Arkady-Skvortsov/value-object.js/blob/main/VALUE-OBJECT.md)<br />
+^
+|
+implementation for Javascript/Typescript
+
+# Motivation
+
+I noticed that we (JS) do not have a normal LIBRARY for using algorithms, for example: 1) https://www.npmjs.com/package/algorithm-js, 2) https://www.npmjs.com/package/algorithm-tool, 3) https://www.npmjs.com/package/algorithm-collection, 4) ; These are only experiments and some do not have any tests or proper documentation or just not a very good interface; So I decided to fix it by creating algorithm.js; With it, you will use algorithms / data structures with a good interface, ready-made templates and documentation (so that you can figure out and understand how most popular algorithms and data structures work, what calculations are better to take for each algorithm and why the author did it the way he did)
 
 # How to use ?
 
