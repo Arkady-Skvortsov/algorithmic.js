@@ -1,7 +1,7 @@
 class BigONotation {
   constructor() {}
 
-  create() {}
+  run() {}
 }
 
 export { BigONotation };

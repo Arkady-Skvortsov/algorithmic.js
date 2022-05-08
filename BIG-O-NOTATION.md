@@ -2,7 +2,7 @@
 
 # About
 
-Big O notation OR O(n)[as an example] - it's .....
+Big O notation[O(n) like an example] - it's
 
 # Basics
 
