@@ -9,13 +9,29 @@ class Stack {
     this.stack.push(arg);
   }
 
-  public pop() {}
+  public pop() {
+    this.stack.pop();
+  }
 
-  public peek() {}
+  public first() {
+    return this.stack[0];
+  }
 
-  public isEmpty() {}
+  public peek() {
+    return this.stack[this.stack.length - 1];
+  }
+
+  public getSize() {
+    return this.stack.length;
+  }
+
+  public isEmpty() {
+    return this.stack.length === 0;
+  }
+
+  public print() {
+    return this.stack.join(' ');
+  }
 }
-
-const stack = new Stack();
 
 export { Stack };

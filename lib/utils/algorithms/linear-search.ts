@@ -1,1 +1,3 @@
-class LinearSearch {}
+class LinearSearch {
+  run() {}
+}

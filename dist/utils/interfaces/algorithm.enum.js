@@ -18,6 +18,9 @@ var algorithmEnum;
     algorithmEnum[algorithmEnum["DIJKSTRAS-ALGORITHM"] = 12] = "DIJKSTRAS-ALGORITHM";
     algorithmEnum[algorithmEnum["RECURSIVE-TRAVERSAL-BINARY-TREE"] = 13] = "RECURSIVE-TRAVERSAL-BINARY-TREE";
     algorithmEnum[algorithmEnum["CACHING"] = 14] = "CACHING";
+    algorithmEnum[algorithmEnum["FEYNMAN-ALGORITHM"] = 15] = "FEYNMAN-ALGORITHM";
+    algorithmEnum[algorithmEnum["FOURIER-TRANSFORM"] = 16] = "FOURIER-TRANSFORM";
+    algorithmEnum[algorithmEnum["HYPER-LOG-LOG"] = 17] = "HYPER-LOG-LOG";
 })(algorithmEnum || (algorithmEnum = {}));
 exports.algorithmEnum = algorithmEnum;
 //# sourceMappingURL=algorithm.enum.js.map

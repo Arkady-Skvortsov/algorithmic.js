@@ -71,3 +71,15 @@ A graph is an abstract, non-linear data structure that is made of a finite set o
 Graphs are often used to represent networks, such as circuit networks or even paths in a city. They're great for solving real-world problems, but they can also be used as representations of digital networks.
 
 For example, on Facebook, each user could be represented with a node (or vertex). Each vertex could then contain information about that user, and each edge could represent their connection with another user.
+
+# Bloom Filter
+
+# Priority Queue
+
+Priority Queue is an extension of Queue having some properties as follows:
+
+- Each element of the priority queue has a priority associated with it.
+- Elements are added to the queue as per the priority.
+- Lowest priority elements are removed first.
+
+We can design a priority queue using two approaches in the first case we can add the queue element at the end of the queue and we can remove the elements of the queue depending on the priority. In the second case, we can add elements to the queue according to the priority and remove them from the front of the queue. In this article, we would use the second approach to implement a Priority Queue

@@ -14,6 +14,9 @@ enum algorithmEnum {
   'DIJKSTRAS-ALGORITHM',
   'RECURSIVE-TRAVERSAL-BINARY-TREE',
   'CACHING',
+  'FEYNMAN-ALGORITHM',
+  'FOURIER-TRANSFORM',
+  'HYPER-LOG-LOG',
 }
 
 export { algorithmEnum };
