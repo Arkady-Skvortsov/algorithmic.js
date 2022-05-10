@@ -14,7 +14,7 @@ Stacks are known as LIFO (Last In First Out) structures. This means the element 
 
 Wikipedia: https://en.wikipedia.org/wiki/Stack<br />
 
-<img width="400" align="center" src="./assets/data-structure/stack.jpg" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/stack.jpg" /></p>
 
 # Queue
 
@@ -26,7 +26,7 @@ Queues are often used to manage threads in multithreading, and they are (not sur
 
 Wikipedia: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)<br />
 
-<img width="400" align="center" src="./assets/data-structure/queue.png" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/queue.png" /></p>
 
 # Hash-Table
 
@@ -40,7 +40,7 @@ Hash tables are commonly used to create database indexes, to create associative 
 
 Wikipedia: https://en.wikipedia.org/wiki/Hash_table<br />
 
-<img width="400" align="center" src="./assets/data-structure/hash-table..png" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/hash-table.png" /></p>
 
 # Array
 
@@ -52,7 +52,7 @@ Arrays are commonly used as structures for building other, more complicated data
 
 Wikipedia: https://en.wikipedia.org/wiki/Array<br />
 
-<img width="400" align="center" src="./assets/data-structure/array.jpg" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/array.jpg" /></p>
 
 # Linked List
 
@@ -62,7 +62,7 @@ Each element in a linked list is called a “node,” and each node contains a k
 
 Wikipedia: https://en.wikipedia.org/wiki/Linked_list#:~:text=In%20computer%20science%2C%20a%20linked,which%20together%20represent%20a%20sequence.<br />
 
-<img width="400" align="center" src="./assets/data-structure/linked-list.png" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/linked-list.png" /></p>
 
 # Heap
 
@@ -74,7 +74,7 @@ Heaps are often used in algorithms to create priority queues, and to find the sm
 
 Wikipedia: https://en.wikipedia.org/wiki/Heap_(data_structure)<br />
 
-<img width="400" align="center" src="./assets/data-structure/min-max-heap.png" />
+<p style="text-align: center"><img width="400" align="center" src="./assets/data-structure/min-max-heap.png" /></p>
 
 # Tree
 
@@ -90,31 +90,32 @@ Binary search trees are used in many different types of search applications. Oth
 
 Wikipedia: https://en.wikipedia.org/wiki/Tree_(data_structure)<br />
 
-<img width="400" align="center" src="./assets/data-structure/binary-tree.png" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/binary-tree.png" /></p><br />
 
 # Red Black Tree
 
+In computer science, a red–black tree is a kind of self-balancing binary search tree. Each node stores an extra bit representing "color" ("red" or "black"), used to ensure that the tree remains balanced during insertions and deletions.<br />
+
 Wikipedia: https://en.wikipedia.org/wiki/Red–black_tree<br />
 
-<img width="400" align="center" src="./assets/data-structure/red-black-tree.png" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/red-black-tree.png" /></p>
 
 # Splay Tree
 
+A splay tree is a binary search tree with the additional property that recently accessed elements are quick to access again. Like self-balancing binary search trees, a splay tree performs basic operations such as insertion, look-up and removal in O(log n) amortized time
+
 Wikipedia: https://en.wikipedia.org/wiki/Splay_tree<br />
 
-<img width="400" align="center" src="./assets/data-structure/splay-tree.png" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/splay-tree.png" /></p><br />
 
 # Graph
 
-A graph is an abstract, non-linear data structure that is made of a finite set of nodes that are connected by edges. The nodes may be referred to as “vertices” and contain values, whereas the edges are simply lines or arcs that connect two nodes in the graph.
-
-Graphs are often used to represent networks, such as circuit networks or even paths in a city. They're great for solving real-world problems, but they can also be used as representations of digital networks.
-
+A graph is an abstract, non-linear data structure that is made of a finite set of nodes that are connected by edges. The nodes may be referred to as “vertices” and contain values, whereas the edges are simply lines or arcs that connect two nodes in the graph.Graphs are often used to represent networks, such as circuit networks or even paths in a city. They're great for solving real-world problems, but they can also be used as representations of digital networks.
 For example, on Facebook, each user could be represented with a node (or vertex). Each vertex could then contain information about that user, and each edge could represent their connection with another user.<br />
 
 Wikipedia: https://en.wikipedia.org/wiki/Graph_(abstract_data_type)<br />
 
-<img width="400" align="center" src="./assets/data-structure/graph.jpeg" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/graph.jpeg" /></p><br />
 
 # Bloom Filter
 
@@ -122,7 +123,7 @@ A Bloom filter is a space-efficient probabilistic data structure, conceived by B
 
 Wikipedia: https://en.wikipedia.org/wiki/Bloom_filter<br />
 
-<img with="400" align="center" src="./assets/data-structure/bloom-filter.png" />
+<p style="text-align: center"><img with="400" src="./assets/data-structure/bloom-filter.png" /></p><br />
 
 # Priority Queue
 
@@ -136,4 +137,4 @@ We can design a priority queue using two approaches in the first case we can add
 
 Wikipedia: https://en.wikipedia.org/wiki/Priority_queue<br />
 
-<img width="400" align="center" src="./assets/data-structure/priority-queue.png" />
+<p style="text-align: center"><img width="400" src="./assets/data-structure/priority-queue.png" /></p>

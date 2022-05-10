@@ -2,9 +2,9 @@
 
 # About
 
-[Algorithms](https://github.com/Arkady-Skvortsov/value-object.js/blob/main/VALUE-OBJECT.md)
-[Data Structures](https://github.com/Arkady-Skvortsov/value-object.js/blob/main/VALUE-OBJECT.md)<br />
-[BIG-O-NOTATION](https://github.com/Arkady-Skvortsov/value-object.js/blob/main/VALUE-OBJECT.md)<br />
+[Algorithms](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/ALGORITHM.md)<br />
+[Data Structures](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/DATA-STRUCTURE.md)<br />
+[BIG-O-NOTATION](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/BIG-O-NOTATION.md)<br />
 ^
 |
 implementation for Javascript/Typescript

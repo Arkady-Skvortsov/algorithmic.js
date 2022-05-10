@@ -15,7 +15,7 @@ In computer science, a linear search or sequential search is a method for findin
 
 Wikipedia: https://en.wikipedia.org/wiki/Linear_search<br />
 
-<img align="center" width="400" src="./assets/algorithms/linear-search.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/linear-search.png" /></p><br />
 
 # Binary search
 
@@ -23,7 +23,7 @@ In computer science, binary search, also known as half-interval search, logarith
 
 Wikipedia: https://en.wikipedia.org/wiki/Binary_search_algorithm<br />
 
-<img align="center" width="400" src="./assets/algorithms/binary-search.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/binary-search.png" /></p><br />
 
 # Selection Sort
 
@@ -31,7 +31,7 @@ In computer science, selection sort is an in-place comparison sorting algorithm.
 
 Wikipedia: https://en.wikipedia.org/wiki/Selection_sort<br />
 
-<img align="center" width="400" src="./assets/algorithms/selection-sort.webp" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/selection-sort.webp" /></p><br />
 
 # Quicksort
 
@@ -39,7 +39,7 @@ Quicksort is an in-place sorting algorithm. Developed by British computer scient
 
 Wikipedia: https://en.wikipedia.org/wiki/Quicksort<br />
 
-<img align="center" width="400" src="./assets/algorithms/quicksort-tree.jpg" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/quicksort-tree.jpg" /></p><br />
 
 # Bubble Sort
 
@@ -47,7 +47,7 @@ Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorith
 
 Wikipedia: https://en.wikipedia.org/wiki/Bubble_sort<br />
 
-<img align="center" width="400" src="./assets/algorithms/bubble-sort.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/bubble-sort.png" /></p><br />
 
 # Merge Sort
 
@@ -55,7 +55,7 @@ In computer science, merge sort (also commonly spelled as mergesort) is an effic
 
 Wikipedia: https://en.wikipedia.org/wiki/Merge_sort<br />
 
-<img align="center" width="400" src="./assets/algorithms/merge-sort.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/merge-sort.png" /></p><br />
 
 # Shellsort
 
@@ -63,7 +63,7 @@ Shellsort, also known as Shell sort or Shell's method, is an in-place comparison
 
 Wikipedia: https://en.wikipedia.org/wiki/Shellsort<br />
 
-<img align="center" width="400" src="./assets/algorithms/shell-sort.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/shell-sort.png" /></p><br />
 
 # Heap Sort
 
@@ -71,7 +71,7 @@ In computer science, heapsort is a comparison-based sorting algorithm. Heapsort 
 
 Wikipedia: https://en.wikipedia.org/wiki/Heapsort<br />
 
-<img align="center" width="400" src="./assets/algorithms/heap-sort.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/heap-sort.png" /></p><br />
 
 # Smooth Sort
 
@@ -79,7 +79,7 @@ In computer science, smoothsort is a comparison-based sorting algorithm. A varia
 
 Wikipedia: https://en.wikipedia.org/wiki/Smoothsort<br />
 
-<img align="center" width="400" src="./assets/algorithms/smooth-sort.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/smooth-sort.png" /></p><br />
 
 # Patience Sort
 
@@ -87,7 +87,7 @@ In computer science, patience sorting is a sorting algorithm inspired by, and na
 
 Wikipedia: https://en.wikipedia.org/wiki/Patience_sorting<br />
 
-<img align="center" width="400" src="./assets/algorithms/patience-sort.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/patience-sort.png" /></p><br />
 
 # Radix Sort
 
@@ -95,7 +95,7 @@ In computer science, radix sort is a non-comparative sorting algorithm. It avoid
 
 Wikipedia: https://en.wikipedia.org/wiki/Radix_sort<br />
 
-<img align="center" width="400" src="./assets/algorithms/radis-sort.webp" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/radix-sort.webp" /></p><br />
 
 # Counting Sort
 
@@ -103,7 +103,7 @@ In computer science, counting sort is an algorithm for sorting a collection of o
 
 Wikipedia: https://en.wikipedia.org/wiki/Counting_sort<br />
 
-<img align="center" width="400" src="./assets/algorithms/counting-sort.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/counting-sort.png" /></p><br />
 
 # Recursive Traversal Binary Tree
 
@@ -111,7 +111,7 @@ In computer science, tree traversal (also known as tree search and walking the t
 
 Wikipedia: https://en.wikipedia.org/wiki/Tree_traversal<br />
 
-<img align="center" width="400" src="./assets/algorithms/tree-traversal.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/tree-traversal.png" /></p><br />
 
 # Dijkstra's Algorithm
 
@@ -120,7 +120,7 @@ The algorithm exists in many variants. Dijkstra's original algorithm found the s
 
 Wikipedia: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm<br />
 
-<img align="center" width="400" src="./assets/algorithms/dijkstras-algorithm.jpg" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/dijkstras-algorithm.jpg" /></p><br />
 
 # Caching
 
@@ -128,7 +128,7 @@ In computing, a cache is a hardware or software component that stores data so th
 
 Wikipedia: https://en.wikipedia.org/wiki/Cache_(computing)
 
-<img align="center" width="400" src="./assets/algorithms/" />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/" /></p><br />
 
 # Diffie Hellman Key Exchange
 
@@ -136,7 +136,7 @@ Diffie–Hellman key exchange[nb 1] is a method of securely exchanging cryptogra
 
 Wikipedia: https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange<br />
 
-<img align="center" width="400" src="./assets/algorithms/diffie-hellman-key.jpg" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/diffie-hellman-key.jpg" /></p><br />
 
 # Fourier Transform
 
@@ -144,7 +144,7 @@ A Fourier transform (FT) is a mathematical transform that decomposes functions d
 
 Wikipedia: https://en.wikipedia.org/wiki/Fourier_transform<br />
 
-<img align="center" width="400" src="./assets/fourier-transform.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/fourier-transform.png" /></p><br />
 
 # Hyper Log Log
 
@@ -152,7 +152,7 @@ HyperLogLog is an algorithm for the count-distinct problem, approximating the nu
 
 Wikipedia: https://en.wikipedia.org/wiki/HyperLogLog<br />
 
-<img align="center" width="400" src="./assets/algorithms/hyper-log-log.png" /><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/hyper-log-log.png" /></p><br />
 
 # Hash Function
 
@@ -160,4 +160,4 @@ A hash function is any function that can be used to map data of arbitrary size t
 
 Wikipedia: https://en.wikipedia.org/wiki/Hash_function<br />
 
-<img align="center" width="400" src="./assets/algorithms/hash-function.png" /><br />
+<p style="text-align: center"><img align="center" width="400" src="./assets/algorithms/hash-function.png" /></p><br />
