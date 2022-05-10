@@ -127,17 +127,4 @@ class LinkedList {
     }
 }
 exports.LinkedList = LinkedList;
-const ll = new LinkedList();
-ll.append(10);
-ll.append(12);
-ll.append(25);
-ll.append(500);
-ll.append(13);
-ll.append(244);
-console.log(ll.print());
-ll.removeByIndex(0);
-ll.insertAfter(600, 4);
-console.log(ll.getSize());
-console.log(ll.peek());
-console.log(ll.print());
 //# sourceMappingURL=linked-list.js.map

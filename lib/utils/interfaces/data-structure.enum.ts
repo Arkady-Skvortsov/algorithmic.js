@@ -7,7 +7,10 @@ type dataStructureType =
   | 'TREE'
   | 'HASH-TABLE'
   | 'BLOOM-FILTER'
-  | 'PRIORITY-QUEUE';
+  | 'PRIORITY-QUEUE'
+  | 'BINARY-TREE'
+  | 'RED-BLACK-TREE'
+  | 'SPLAY-TREE';
 
 interface priorityQueue {
   element: any;

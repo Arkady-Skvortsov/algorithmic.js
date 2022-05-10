@@ -1,5 +1,5 @@
 class Algorithm {
-  constructor() {}
+  private constructor() {}
 
   create() {}
 }

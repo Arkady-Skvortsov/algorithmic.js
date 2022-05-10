@@ -10,7 +10,11 @@ Wikipedia - https://en.wikipedia.org/wiki/Data_structure<br />
 
 # Stack
 
-Stacks are known as LIFO (Last In First Out) structures. This means the element placed last can be accessed first. You can “push” a new element onto the top of the stack, or you can “pop,” deleting the element inserted last which is at the top of the stack.
+Stacks are known as LIFO (Last In First Out) structures. This means the element placed last can be accessed first. You can “push” a new element onto the top of the stack, or you can “pop,” deleting the element inserted last which is at the top of the stack.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Stack<br />
+
+<img width="400" align="center" src="./assets/stack.jpg" />
 
 # Queue
 
@@ -18,7 +22,11 @@ A queue functions similarly to a stack, but instead of being a LIFO structure, i
 
 You can enqueue an element in this structure, which means inserting the element to the end of the queue. You can also dequeue an element, which means deleting an element from the beginning of the queue.
 
-Queues are often used to manage threads in multithreading, and they are (not surprisingly) used to implement priority queuing systems.
+Queues are often used to manage threads in multithreading, and they are (not surprisingly) used to implement priority queuing systems.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)<br />
+
+<img width="400" align="center" src="./assets/queue.png" />
 
 # Hash-Table
 
@@ -28,7 +36,11 @@ For example, if you go to college, you may be assigned a unique student ID numbe
 
 A hash table uses what’s known as a “hash function” to map a data set of any size to one of a fixed size—the hash table. The values that a hash function returns are known as “hash values.”
 
-Hash tables are commonly used to create database indexes, to create associative arrays and to create a “set.”
+Hash tables are commonly used to create database indexes, to create associative arrays and to create a “set.”<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Hash_table<br />
+
+<img width="400" align="center" src="./assets/hash-table..png" />
 
 # Array
 
@@ -36,13 +48,21 @@ One of the simplest data structures, an array is a collection of items that are 
 
 The best way to think about an array is like a weekly medication organizer. It includes small containers lined up in a sequence, and each container has elements inside.
 
-Arrays are commonly used as structures for building other, more complicated data structures. They are also used for sorting algorithms.
+Arrays are commonly used as structures for building other, more complicated data structures. They are also used for sorting algorithms.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Array<br />
+
+<img width="400" align="center" src="./assets/array.jpg" />
 
 # Linked List
 
 A linked list is a sequence of items arranged in a linear order all connected to each other. This means you must access data in order, so random access to data is not possible.
 
-Each element in a linked list is called a “node,” and each node contains a key and a pointer. The pointer directs you to the next node, called a “next.” The sequence starts with a “head,” which directs you to the first element within the list. The last element of this list is known as the “tail.”
+Each element in a linked list is called a “node,” and each node contains a key and a pointer. The pointer directs you to the next node, called a “next.” The sequence starts with a “head,” which directs you to the first element within the list. The last element of this list is known as the “tail.”<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Linked_list#:~:text=In%20computer%20science%2C%20a%20linked,which%20together%20represent%20a%20sequence.<br />
+
+<img width="400" align="center" src="./assets/linked-list.png" />
 
 # Heap
 
@@ -50,7 +70,11 @@ Similarly, a heap is a type of binary tree in which the parent nodes are compare
 
 There are two types of heaps. In a min heap, the parent’s key is less than or equal to the keys of its children. In a max heap, the parent’s key is greater than or equal to the keys of its children.
 
-Heaps are often used in algorithms to create priority queues, and to find the smallest or largest value in an array.
+Heaps are often used in algorithms to create priority queues, and to find the smallest or largest value in an array.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Heap_(data_structure)<br />
+
+<img width="400" align="center" src="./assets/min-max-heap.png" />
 
 # Tree
 
@@ -62,7 +86,23 @@ Key (the value saved in the node)
 Left (pointer to the left child node)
 Right (pointer to the right child node)
 P (pointer to the parent node)
-Binary search trees are used in many different types of search applications. Other types of trees are used in wireless networking and to create expression solvers.
+Binary search trees are used in many different types of search applications. Other types of trees are used in wireless networking and to create expression solvers.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Tree_(data_structure)<br />
+
+<img width="400" align="center" src="./assets/binary-tree.png" />
+
+# Red Black Tree
+
+Wikipedia: https://en.wikipedia.org/wiki/Red–black_tree<br />
+
+<img width="400" align="center" src="./assets/red-black-tree.png" />
+
+# Splay Tree
+
+Wikipedia: https://en.wikipedia.org/wiki/Splay_tree<br />
+
+<img width="400" align="center" src="./assets/splay-tree.png" />
 
 # Graph
 
@@ -70,9 +110,19 @@ A graph is an abstract, non-linear data structure that is made of a finite set o
 
 Graphs are often used to represent networks, such as circuit networks or even paths in a city. They're great for solving real-world problems, but they can also be used as representations of digital networks.
 
-For example, on Facebook, each user could be represented with a node (or vertex). Each vertex could then contain information about that user, and each edge could represent their connection with another user.
+For example, on Facebook, each user could be represented with a node (or vertex). Each vertex could then contain information about that user, and each edge could represent their connection with another user.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Graph_(abstract_data_type)<br />
+
+<img width="400" align="center" src="./assets/graph.jpeg" />
 
 # Bloom Filter
+
+A Bloom filter is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set. False positive matches are possible, but false negatives are not – in other words, a query returns either "possibly in set" or "definitely not in set". Elements can be added to the set, but not removed (though this can be addressed with the counting Bloom filter variant); the more items added, the larger the probability of false positives.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Bloom_filter<br />
+
+<img with="400" align="center" src="./assets/bloom-filter.png" />
 
 # Priority Queue
 
@@ -82,4 +132,8 @@ Priority Queue is an extension of Queue having some properties as follows:
 - Elements are added to the queue as per the priority.
 - Lowest priority elements are removed first.
 
-We can design a priority queue using two approaches in the first case we can add the queue element at the end of the queue and we can remove the elements of the queue depending on the priority. In the second case, we can add elements to the queue according to the priority and remove them from the front of the queue. In this article, we would use the second approach to implement a Priority Queue
+We can design a priority queue using two approaches in the first case we can add the queue element at the end of the queue and we can remove the elements of the queue depending on the priority. In the second case, we can add elements to the queue according to the priority and remove them from the front of the queue. In this article, we would use the second approach to implement a Priority Queue.<br />
+
+https://en.wikipedia.org/wiki/Priority_queue<br />
+
+<img width="400" align="center" src="./assets/priority-queue.png" />

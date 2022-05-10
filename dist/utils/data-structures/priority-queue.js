@@ -52,17 +52,4 @@ class PriorityQueue {
     }
 }
 exports.PriorityQueue = PriorityQueue;
-const priorityQueue = new PriorityQueue();
-priorityQueue.enqueue('O privet', 1);
-priorityQueue.enqueue('O poka', 2);
-priorityQueue.enqueue('Chto?', 2);
-priorityQueue.enqueue('Menya zovut Valera, mne 54 goda', 3);
-priorityQueue.enqueue([1, 3, false, undefined], 8);
-priorityQueue.enqueue(122, 7);
-priorityQueue.enqueue('N', 6);
-priorityQueue.enqueue('Arkasha', 6);
-console.log(priorityQueue.getSize());
-console.log(priorityQueue.first());
-console.log(priorityQueue.peek());
-console.log(priorityQueue.print());
 //# sourceMappingURL=priority-queue.js.map
