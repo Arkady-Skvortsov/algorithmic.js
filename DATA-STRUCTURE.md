@@ -14,7 +14,7 @@ Stacks are known as LIFO (Last In First Out) structures. This means the element 
 
 Wikipedia: https://en.wikipedia.org/wiki/Stack<br />
 
-<img width="400" align="center" src="./assets/stack.jpg" />
+<img width="400" align="center" src="./assets/data-structure/stack.jpg" />
 
 # Queue
 
@@ -26,7 +26,7 @@ Queues are often used to manage threads in multithreading, and they are (not sur
 
 Wikipedia: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)<br />
 
-<img width="400" align="center" src="./assets/queue.png" />
+<img width="400" align="center" src="./assets/data-structure/queue.png" />
 
 # Hash-Table
 
@@ -40,7 +40,7 @@ Hash tables are commonly used to create database indexes, to create associative 
 
 Wikipedia: https://en.wikipedia.org/wiki/Hash_table<br />
 
-<img width="400" align="center" src="./assets/hash-table..png" />
+<img width="400" align="center" src="./assets/data-structure/hash-table..png" />
 
 # Array
 
@@ -52,7 +52,7 @@ Arrays are commonly used as structures for building other, more complicated data
 
 Wikipedia: https://en.wikipedia.org/wiki/Array<br />
 
-<img width="400" align="center" src="./assets/array.jpg" />
+<img width="400" align="center" src="./assets/data-structure/array.jpg" />
 
 # Linked List
 
@@ -62,7 +62,7 @@ Each element in a linked list is called a “node,” and each node contains a k
 
 Wikipedia: https://en.wikipedia.org/wiki/Linked_list#:~:text=In%20computer%20science%2C%20a%20linked,which%20together%20represent%20a%20sequence.<br />
 
-<img width="400" align="center" src="./assets/linked-list.png" />
+<img width="400" align="center" src="./assets/data-structure/linked-list.png" />
 
 # Heap
 
@@ -74,7 +74,7 @@ Heaps are often used in algorithms to create priority queues, and to find the sm
 
 Wikipedia: https://en.wikipedia.org/wiki/Heap_(data_structure)<br />
 
-<img width="400" align="center" src="./assets/min-max-heap.png" />
+<img width="400" align="center" src="./assets/data-structure/min-max-heap.png" />
 
 # Tree
 
@@ -90,19 +90,19 @@ Binary search trees are used in many different types of search applications. Oth
 
 Wikipedia: https://en.wikipedia.org/wiki/Tree_(data_structure)<br />
 
-<img width="400" align="center" src="./assets/binary-tree.png" />
+<img width="400" align="center" src="./assets/data-structure/binary-tree.png" />
 
 # Red Black Tree
 
 Wikipedia: https://en.wikipedia.org/wiki/Red–black_tree<br />
 
-<img width="400" align="center" src="./assets/red-black-tree.png" />
+<img width="400" align="center" src="./assets/data-structure/red-black-tree.png" />
 
 # Splay Tree
 
 Wikipedia: https://en.wikipedia.org/wiki/Splay_tree<br />
 
-<img width="400" align="center" src="./assets/splay-tree.png" />
+<img width="400" align="center" src="./assets/data-structure/splay-tree.png" />
 
 # Graph
 
@@ -114,7 +114,7 @@ For example, on Facebook, each user could be represented with a node (or vertex)
 
 Wikipedia: https://en.wikipedia.org/wiki/Graph_(abstract_data_type)<br />
 
-<img width="400" align="center" src="./assets/graph.jpeg" />
+<img width="400" align="center" src="./assets/data-structure/graph.jpeg" />
 
 # Bloom Filter
 
@@ -122,7 +122,7 @@ A Bloom filter is a space-efficient probabilistic data structure, conceived by B
 
 Wikipedia: https://en.wikipedia.org/wiki/Bloom_filter<br />
 
-<img with="400" align="center" src="./assets/bloom-filter.png" />
+<img with="400" align="center" src="./assets/data-structure/bloom-filter.png" />
 
 # Priority Queue
 
@@ -134,6 +134,6 @@ Priority Queue is an extension of Queue having some properties as follows:
 
 We can design a priority queue using two approaches in the first case we can add the queue element at the end of the queue and we can remove the elements of the queue depending on the priority. In the second case, we can add elements to the queue according to the priority and remove them from the front of the queue. In this article, we would use the second approach to implement a Priority Queue.<br />
 
-https://en.wikipedia.org/wiki/Priority_queue<br />
+Wikipedia: https://en.wikipedia.org/wiki/Priority_queue<br />
 
-<img width="400" align="center" src="./assets/priority-queue.png" />
+<img width="400" align="center" src="./assets/data-structure/priority-queue.png" />
