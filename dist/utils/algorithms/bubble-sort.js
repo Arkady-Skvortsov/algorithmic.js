@@ -16,7 +16,7 @@ class BubbleSort {
                 }
             }
         }
-        return this.array.join(' ');
+        return this.array;
     }
 }
 exports.BubbleSort = BubbleSort;

@@ -22,8 +22,4 @@ class SelectionSort {
     }
 }
 exports.SelectionSort = SelectionSort;
-const selectionSort = new SelectionSort([
-    1, -1, 2, -2, 3, -3, 4, -4, 50, -12, 80, 14, 15, 8, 20,
-]).run();
-console.log(selectionSort);
 //# sourceMappingURL=selection-sort.js.map

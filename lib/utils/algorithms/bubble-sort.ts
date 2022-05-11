@@ -5,7 +5,7 @@ class BubbleSort {
     this.array = array;
   }
 
-  public run() {
+  public run(): any[] {
     for (let i = 0; i < this.array.length; i++) {
       for (let j = 0; j < this.array.length; j++) {
         if (this.array[j + 1] < this.array[j]) {
@@ -16,7 +16,7 @@ class BubbleSort {
       }
     }
 
-    return this.array.join(' ');
+    return this.array;
   }
 }
 
