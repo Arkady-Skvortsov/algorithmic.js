@@ -23,4 +23,6 @@ var algorithmEnum;
     algorithmEnum[algorithmEnum["HASH-FUNCTION"] = 17] = "HASH-FUNCTION";
 })(algorithmEnum || (algorithmEnum = {}));
 exports.algorithmEnum = algorithmEnum;
+class IAlgorithm {
+}
 //# sourceMappingURL=algorithm.enum.js.map

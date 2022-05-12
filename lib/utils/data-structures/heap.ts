@@ -1,5 +1,7 @@
-class MinHeap {}
+class Heap {
+  public turnInMax() {}
 
-class MaxHeap {}
+  public turnInMin() {}
+}
 
-export { MinHeap, MaxHeap };
+export { Heap };

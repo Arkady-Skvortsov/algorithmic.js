@@ -19,4 +19,9 @@ enum algorithmEnum {
   'HASH-FUNCTION',
 }
 
+abstract class IAlgorithm {
+  abstract getSize(): number;
+  abstract print(): string;
+}
+
 export { algorithmEnum };

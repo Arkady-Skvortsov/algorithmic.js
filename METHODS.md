@@ -74,29 +74,71 @@ create(type: someType): someClass // - it's return a class of algorithm/data-str
 
 - Stack
 
+```ts
+
+```
+
 - Queue
-
-- Priority Queue
-
-- Hash Table
-
-- Linked List
-
-- Heap(Min, Max)
-
-- Tree
-
-- Red Black Tree
-
-- Splay Tree
-
-- Bloom Filter
-
-- Graph
 
 ```ts
 
 ```
+
+- Priority Queue
+
+```ts
+
+```
+
+- Hash Table
+
+```ts
+
+```
+
+- Linked List
+
+```ts
+
+```
+
+- Heap(Min, Max)
+
+```ts
+
+```
+
+- Tree
+
+```ts
+
+```
+
+- Red Black Tree
+
+```ts
+
+```
+
+- Splay Tree
+
+```ts
+
+```
+
+- Bloom Filter
+
+```ts
+
+```
+
+- Graph
+
+```ts
+bfs(); //
+```
+
+---
 
 # BigONotation
 
@@ -104,13 +146,35 @@ create(type: someType): someClass // - it's return a class of algorithm/data-str
 
 - Linear
 
+```ts
+
+```
+
 - Quadratic time
+
+```ts
+
+```
 
 - Logarithmic time
 
+```ts
+
+```
+
 - Linearithmic time
 
+```ts
+
+```
+
 - Exponential time
+
+```ts
+
+```
+
+---
 
 ```ts
   check(steps: number) // It's check BigONotation by count of steps

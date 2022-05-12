@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MaxHeap = exports.MinHeap = void 0;
-class MinHeap {
+exports.Heap = void 0;
+class Heap {
+    turnInMax() { }
+    turnInMin() { }
 }
-exports.MinHeap = MinHeap;
-class MaxHeap {
-}
-exports.MaxHeap = MaxHeap;
+exports.Heap = Heap;
 //# sourceMappingURL=heap.js.map
