@@ -9,6 +9,14 @@
 |
 implementation for Javascript/Typescript
 
+# Methods docs
+
+[Methods](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/METHODS.md)
+
+# "Why do I need to use algorithms ?" - answer here
+
+So, let's see here: [Why do I need to use algorithms ?](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/WHY-DO-I-NEED-TO-USE-ALGORITHMS.md)
+
 # Recomendation
 
 If you are just starting your way into algorithms or want to support everything with understandable theory and practice (with Python code examples), I recommend the book: "Grokking Algorithms"(PDF version): https://edu.anarcho-copy.org/Algorithm/grokking-algorithms-illustrated-programmers-curious.pdf
@@ -26,14 +34,12 @@ I noticed that we (JS) do not have a normal LIBRARY for using algorithms, for ex
 ```ts
 import { Algorithm, DataStructure, BigONotation } from 'algorithm.js';
 
-const linearSearch = new Algorithm('LINEAR-SEARCH').create([
-  1, 2, 4, 7, 10, 23, 26, 30, 45,
-]);
+const linearSearch = new Algorithm().create('LINEAR-SEARCH');
 const stack = new DataStructure().create('STACK');
-const linearTime = new BigONotation('LINEAR');
+const linearTime = new BigONotation().create('LINEAR');
 
-binarySearch.run(30);
-linearTime.check(binarySearch); // N(O) = 8
+linearSearch.run([1, 2, 4, 7, 10, 23, 26, 30, 45]);
+linearTime.check(linearSearch.run()); // N(O) = 8
 
 stack.add(10);
 stack.add(200);

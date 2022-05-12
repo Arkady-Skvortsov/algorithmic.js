@@ -9,7 +9,12 @@ class DataStructure {
   constructor() {}
 
   public create(type: dataStructureType) {
-    if (type === 'STACK') return new Stack();
+    switch (type) {
+      case 'STACK':
+        return new Stack();
+      case 'QUEUE':
+        return new Queue();
+    }
   }
 }
 

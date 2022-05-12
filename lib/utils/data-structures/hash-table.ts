@@ -1,65 +1,83 @@
 class HashTable {
-  private hashTable: any[];
-  private numItems: number;
-  private loadFactor: number;
+  private hashTable: any;
 
   constructor() {
-    this.hashTable = [3];
-    this.numItems = 0;
-    this.loadFactor = this.numItems / this.hashTable.length;
+    this.hashTable = {};
   }
 
-  private letsHash(key: string) {
-    let hash = 17;
+  private letsHash(key: string): number {
+    let hash = 0;
 
-    for (let i = 0; i < key.length; i++) {
-      hash = (13 * hash * key.charCodeAt(i)) % this.hashTable.length;
+    for (let i = 0; i < key.toString().length; i++) {
+      hash += key.charCodeAt(i);
     }
 
-    return hash;
+    return hash % 0.7;
   }
 
-  public setUnique() {}
-
-  public set(key: string, element: any) {
-    this.numItems++;
-
+  public set(key: string, element: any): void {
     const idx = this.letsHash(key);
 
-    this.hashTable[idx]
-      ? this.hashTable[idx].push([key, element])
-      : (this.hashTable[idx] = [[key, element]]);
+    if (!this.hashTable.hasOwnProperty(idx)) this.hashTable[idx] = {};
+
+    this.hashTable[idx][key] = element;
   }
 
-  public get(key: string) {
-    let idx = this.letsHash(key);
-
-    !this.hashTable[idx]
-      ? "You don't have that element in table"
-      : this.hashTable[idx].find((x: any) => x[0] === key)[1];
-  }
-
-  public getSize() {
-    return this.hashTable.length;
-  }
-
-  public isEmpty() {
-    return this.hashTable.length === 0;
-  }
-
-  public has(key: any) {
+  public get(key: string): any {
     const idx = this.letsHash(key);
 
-    return this.hashTable[idx].find((x: any) => x[0] === key)[1] ? true : false;
+    if (
+      this.hashTable.hasOwnProperty(idx) &&
+      this.hashTable[idx].hasOwnProperty(key)
+    )
+      return this.hashTable[idx][key];
   }
 
-  public print() {
-    return this.hashTable;
+  public remove(key: string): void {
+    const idx = this.letsHash(key);
+
+    this.get(key) ? delete this.hashTable[idx][key] : null;
+  }
+
+  public getSize(): number {
+    return Object.keys(this.hashTable).length;
+  }
+
+  public isEmpty(): boolean {
+    return this.getSize() === 0;
+  }
+
+  public keys(): string {
+    return Object.keys(this.hashTable).join(' ');
+  }
+
+  public values(): any {
+    for (const hash in this.hashTable) {
+      for (const value in this.hashTable[hash])
+        return this.hashTable[hash][value];
+    }
+  }
+
+  public first() {
+    return Object.values(this.hashTable)[0];
+  }
+
+  public peek() {
+    return Object.values(this.hashTable)[
+      Object.keys(this.hashTable).length - 1
+    ];
+  }
+
+  public has(key: any): boolean {
+    return this.get(key) ? true : false;
+  }
+
+  public print(): string | undefined {
+    for (let hash in this.hashTable) {
+      for (let key in this.hashTable[hash])
+        return `{ ${key}: ${this.hashTable[hash][key]} }`;
+    }
   }
 }
-
-const hashTable = new HashTable();
-
-console.log(hashTable.has('Arkasha'));
 
 export { HashTable };

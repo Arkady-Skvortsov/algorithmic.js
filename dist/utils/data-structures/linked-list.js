@@ -4,6 +4,7 @@ exports.LinkedList = void 0;
 class Nodes {
     element;
     next;
+    prev;
     constructor(element) {
         this.element = element;
         this.next = null;
@@ -16,7 +17,7 @@ class LinkedList {
         this.head = null;
         this.size = 0;
     }
-    append(element) {
+    add(element) {
         let node = new Nodes(element);
         let current;
         if (this.head == null)
@@ -28,53 +29,67 @@ class LinkedList {
             }
             current.next = node;
         }
-        this.size++;
     }
-    next() {
-        let head = this.head !== null ? this.head : null;
-        let node = new Nodes(head);
-        console.log(head, node);
-    }
-    prev() { }
     peek() {
-        let index = this.size - 1;
-        let curr, prev;
-        curr = this.head;
-        // add the element to the
-        // first index
-        curr = this.head;
-        // iterate over the list to find
-        // the position to insert
-        prev = curr;
-        curr = curr.next;
-        return [index, prev.next, curr.next];
+        let curr = this.head;
+        while (curr.next !== null) {
+            curr = curr.next;
+            if (curr === null)
+                return curr.element;
+        }
+        if (curr === null)
+            return curr.element;
+    }
+    has(element) {
+        let curr = this.head;
+        if (curr.element !== element) {
+            curr = curr.next;
+            if (curr.next.element === element) {
+                return true;
+            }
+            return false;
+        }
+        else {
+            return true;
+        }
     }
     first() {
-        let index = 0;
-        let curr, prev;
-        curr = this.head;
-        prev = curr;
-        if (index === 0) {
+        let idx = 0;
+        let curr = this.head;
+        let prev = curr;
+        if (idx === 0) {
             this.head = curr.next;
         }
         return curr.element;
     }
-    find(element) { }
-    insertAfter(element, index) {
-        if (index < 0 || index > this.size)
+    find(element) {
+        let head = this.head;
+        while (head.element !== element) {
+            head = head.next;
+            if (head.element === element) {
+                return element;
+            }
+            return -1;
+        }
+        if (head.element === element) {
+            return element;
+        }
+    }
+    insertAfter(element, idx) {
+        if (idx < 0 || idx > this.size)
             return 'Please enter a valid index';
         else {
             let node = new Nodes(element);
             let curr, prev;
             curr = this.head;
-            if (index == 0) {
+            if (idx == 0) {
                 node.next = this.head;
                 this.head = node;
             }
             else {
                 curr = this.head;
                 let it = 0;
-                while (it < index) {
+                while (it < idx) {
                     it++;
                     prev = curr;
                     curr = curr.next;
@@ -85,31 +100,36 @@ class LinkedList {
             this.size++;
         }
     }
-    removeByIndex(index) {
-        if (index < 0 || index >= this.size)
-            return 'Please Enter a valid index';
-        let curr, prev, it = 0;
-        curr = this.head;
-        prev = curr;
-        if (index === 0) {
-            this.head = curr.next;
-        }
-        else {
-            while (it < index) {
-                it++;
-                prev = curr;
-                curr = curr.next;
+    remove(element) {
+        let current = this.head;
+        let prev = null;
+        while (current != null) {
+            if (current.element === element) {
+                if (prev == null) {
+                    this.head = current.next;
+                }
+                else {
+                    prev.next = current.next;
+                }
+                this.size--;
+                return current.element;
             }
-            prev.next = curr.next;
+            prev = current;
+            current = current.next;
         }
-        this.size--;
-        return curr.element;
+        return -1;
     }
     isEmpty() {
         return this.size === 0;
     }
     getSize() {
-        return this.size;
+        let count = 0;
+        let node = this.head;
+        while (node) {
+            count++;
+            node = node.next;
+        }
+        return count;
     }
     print() {
         let curr = this.head;
@@ -122,4 +142,12 @@ class LinkedList {
     }
 }
 exports.LinkedList = LinkedList;
+let linkedList = new LinkedList();
+linkedList.add(20);
+linkedList.add(100);
+linkedList.add(120);
+linkedList.add(200);
+linkedList.add(202);
+console.log(linkedList.peek());
+console.log(linkedList.find(200));
 //# sourceMappingURL=linked-list.js.map

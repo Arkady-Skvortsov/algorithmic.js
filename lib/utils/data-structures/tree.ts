@@ -146,15 +146,4 @@ class BinaryTree {
   }
 }
 
-const binaryTree = new BinaryTree();
-
-binaryTree.add(50);
-binaryTree.add(13);
-binaryTree.add(80);
-binaryTree.add(30);
-binaryTree.add(28);
-
-console.log(binaryTree.getSize());
-console.log(binaryTree.print());
-
 export { BinaryTree };

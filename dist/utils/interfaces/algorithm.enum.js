@@ -17,11 +17,10 @@ var algorithmEnum;
     algorithmEnum[algorithmEnum["COUNTING-SORT"] = 11] = "COUNTING-SORT";
     algorithmEnum[algorithmEnum["DIJKSTRAS-ALGORITHM"] = 12] = "DIJKSTRAS-ALGORITHM";
     algorithmEnum[algorithmEnum["RECURSIVE-TRAVERSAL-BINARY-TREE"] = 13] = "RECURSIVE-TRAVERSAL-BINARY-TREE";
-    algorithmEnum[algorithmEnum["CACHING"] = 14] = "CACHING";
-    algorithmEnum[algorithmEnum["DIFFIE-HELLMAN-KEY-EXCHANGE"] = 15] = "DIFFIE-HELLMAN-KEY-EXCHANGE";
-    algorithmEnum[algorithmEnum["FOURIER-TRANSFORM"] = 16] = "FOURIER-TRANSFORM";
-    algorithmEnum[algorithmEnum["HYPER-LOG-LOG"] = 17] = "HYPER-LOG-LOG";
-    algorithmEnum[algorithmEnum["HASH-FUNCTION"] = 18] = "HASH-FUNCTION";
+    algorithmEnum[algorithmEnum["DIFFIE-HELLMAN-KEY-EXCHANGE"] = 14] = "DIFFIE-HELLMAN-KEY-EXCHANGE";
+    algorithmEnum[algorithmEnum["FOURIER-TRANSFORM"] = 15] = "FOURIER-TRANSFORM";
+    algorithmEnum[algorithmEnum["HYPER-LOG-LOG"] = 16] = "HYPER-LOG-LOG";
+    algorithmEnum[algorithmEnum["HASH-FUNCTION"] = 17] = "HASH-FUNCTION";
 })(algorithmEnum || (algorithmEnum = {}));
 exports.algorithmEnum = algorithmEnum;
 //# sourceMappingURL=algorithm.enum.js.map

@@ -2,11 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DataStructure = void 0;
 const stack_1 = require("./data-structures/stack");
+const queue_1 = require("./data-structures/queue");
 class DataStructure {
     constructor() { }
     create(type) {
-        if (type === 'STACK')
-            return new stack_1.Stack();
+        switch (type) {
+            case 'STACK':
+                return new stack_1.Stack();
+            case 'QUEUE':
+                return new queue_1.Queue();
+        }
     }
 }
 exports.DataStructure = DataStructure;

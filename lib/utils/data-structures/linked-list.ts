@@ -1,6 +1,7 @@
 class Nodes {
   public element: any;
   public next: any;
+  public prev: any;
 
   constructor(element: any) {
     this.element = element;
@@ -17,7 +18,7 @@ class LinkedList {
     this.size = 0;
   }
 
-  public append(element: any) {
+  public add(element: any) {
     let node = new Nodes(element);
     let current;
 
@@ -31,70 +32,82 @@ class LinkedList {
 
       current.next = node;
     }
-
-    this.size++;
   }
-
-  public next() {
-    let head = this.head !== null ? this.head : null;
-    let node = new Nodes(head);
-
-    console.log(head, node);
-  }
-
-  public prev() {}
 
   public peek() {
-    let index = this.size - 1;
-    let curr, prev;
+    let curr = this.head;
 
-    curr = this.head;
+    while (curr.next !== null) {
+      curr = curr.next;
 
-    // add the element to the
-    // first index
-    curr = this.head;
+      if (curr === null) return curr.element;
+    }
 
-    // iterate over the list to find
-    // the position to insert
+    if (curr === null) return curr.element;
+  }
 
-    prev = curr;
-    curr = curr.next;
+  public has(element: any) {
+    let curr = this.head;
 
-    return [index, prev.next, curr.next];
+    if (curr.element !== element) {
+      curr = curr.next;
+
+      if (curr.next.element === element) {
+        return true;
+      }
+
+      return false;
+    } else {
+      return true;
+    }
   }
 
   public first() {
-    let index = 0;
-    let curr, prev;
+    let idx = 0;
+    let curr = this.head;
+    let prev = curr;
 
-    curr = this.head;
-    prev = curr;
-
-    if (index === 0) {
+    if (idx === 0) {
       this.head = curr.next;
     }
 
     return curr.element;
   }
 
-  public find(element: any) {}
+  public find(element: any) {
+    let head = this.head;
 
-  public insertAfter(element: any, index: number) {
-    if (index < 0 || index > this.size) return 'Please enter a valid index';
+    while (head.element !== element) {
+      head = head.next;
+
+      if (head.element === element) {
+        return element;
+      }
+
+      return -1;
+    }
+
+    if (head.element === element) {
+      return element;
+    }
+  }
+
+  public insertAfter(element: any, idx: number) {
+    if (idx < 0 || idx > this.size) return 'Please enter a valid index';
     else {
       let node = new Nodes(element);
       let curr, prev;
 
       curr = this.head;
 
-      if (index == 0) {
+      if (idx == 0) {
         node.next = this.head;
         this.head = node;
       } else {
         curr = this.head;
         let it = 0;
 
-        while (it < index) {
+        while (it < idx) {
           it++;
           prev = curr;
           curr = curr.next;
@@ -107,29 +120,28 @@ class LinkedList {
     }
   }
 
-  public removeByIndex(index: number) {
-    if (index < 0 || index >= this.size) return 'Please Enter a valid index';
+  public remove(element: any) {
+    let current = this.head;
+    let prev = null;
 
-    let curr,
-      prev,
-      it = 0;
-    curr = this.head;
-    prev = curr;
+    while (current != null) {
+      if (current.element === element) {
+        if (prev == null) {
+          this.head = current.next;
+        } else {
+          prev.next = current.next;
+        }
 
-    if (index === 0) {
-      this.head = curr.next;
-    } else {
-      while (it < index) {
-        it++;
-        prev = curr;
-        curr = curr.next;
+        this.size--;
+
+        return current.element;
       }
 
-      prev.next = curr.next;
+      prev = current;
+      current = current.next;
     }
 
-    this.size--;
-    return curr.element;
+    return -1;
   }
 
   public isEmpty() {
@@ -137,7 +149,15 @@ class LinkedList {
   }
 
   public getSize() {
-    return this.size;
+    let count = 0;
+    let node = this.head;
+
+    while (node) {
+      count++;
+      node = node.next;
+    }
+
+    return count;
   }
 
   public print() {
@@ -152,5 +172,16 @@ class LinkedList {
     return str;
   }
 }
+
+let linkedList = new LinkedList();
+
+linkedList.add(20);
+linkedList.add(100);
+linkedList.add(120);
+linkedList.add(200);
+linkedList.add(202);
+
+console.log(linkedList.peek());
+console.log(linkedList.find(200));
 
 export { LinkedList };
