@@ -33,6 +33,10 @@ class HashTable {
       return this.hashTable[idx][key];
   }
 
+  public checkUnique(key: string) {
+    return this.get(key) ? "It's not unique key" : "It's unique key";
+  }
+
   public remove(key: string): void {
     const idx = this.letsHash(key);
 

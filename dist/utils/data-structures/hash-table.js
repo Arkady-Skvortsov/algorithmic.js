@@ -25,15 +25,8 @@ class HashTable {
             this.hashTable[idx].hasOwnProperty(key))
             return this.hashTable[idx][key];
     }
-    setUnique(key, element) {
-        const idx = this.letsHash(key);
-        this.hashTable.hasOwnProperty(idx)
-            ? 'You already have that property in hash table'
-            : (this.hashTable[idx][key] = element);
-    }
-    getCache(key) {
-        const idx = this.letsHash(key);
-        return idx;
+    checkUnique(key) {
+        return this.get(key) ? "It's not unique key" : "It's unique key";
     }
     remove(key) {
         const idx = this.letsHash(key);
@@ -71,9 +64,4 @@ class HashTable {
     }
 }
 exports.HashTable = HashTable;
-const hashTable = new HashTable();
-hashTable.set('Petr', 12);
-hashTable.setUnique('Arkadiy', 'Middle developer enthusiast');
-hashTable.set('Fruits', ['Apple', 'Watermelon']);
-console.log(hashTable.get('Arkadiy'));
 //# sourceMappingURL=hash-table.js.map

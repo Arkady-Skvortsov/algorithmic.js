@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BinarySearch = void 0;
 class BinarySearch {
+    constructor() { }
     run(array, item) {
         let start = 0;
         let end = array.length;

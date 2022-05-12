@@ -1,4 +1,6 @@
 class BinarySearch {
+  constructor() {}
+
   public run(array: any[], item: any) {
     let start = 0;
     let end = array.length;

@@ -19,7 +19,7 @@ class BinaryTree {
         this.size = 0;
     }
     add(element) {
-        let newNode = new TreeNode(element);
+        const newNode = new TreeNode(element);
         if (this.root === null) {
             this.root = newNode;
             return this;
@@ -63,7 +63,7 @@ class BinaryTree {
                 return current.left;
             }
             else {
-                let tempNode = this.findSmallestTreeNode(current.right);
+                const tempNode = this.findSmallestTreeNode(current.right);
                 current.element = tempNode.element;
                 current.right = this.removeTreeNode(current.right, tempNode.element);
                 return current;
@@ -90,7 +90,19 @@ class BinaryTree {
         if (!this.root)
             return false;
         let current = this.root;
-        while (current) { }
+        while ((current.left !== null && current.right !== null) ??
+            current.left === null) { }
+    }
+    setRootdTo(element) {
+        let root = this.root;
+        while (root.left !== null && root.right !== null) {
+            let nextLeft = root.left;
+            let nextRight = root.right;
+            return nextLeft && nextRight;
+        }
+    }
+    releaseTheRoot() {
+        this.root = null;
     }
     has(element) {
         if (!this.root)
@@ -130,4 +142,12 @@ class BinaryTree {
     }
 }
 exports.BinaryTree = BinaryTree;
+const tree = new BinaryTree();
+tree.add(120);
+tree.add(140);
+tree.add(200);
+tree.add(20);
+tree.add(24);
+tree.add(30);
+console.log(tree.print());
 //# sourceMappingURL=tree.js.map

@@ -28,6 +28,8 @@ create(type: someType): someClass // - it's return a class of algorithm/data-str
 
 # Algorithms
 
+[Algorithms](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/ALGORITHM.md)
+
 - Linear Search
 
 - Binary Search
@@ -68,6 +70,8 @@ create(type: someType): someClass // - it's return a class of algorithm/data-str
 
 # Data Structure
 
+[Data structures](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/DATA-STRUCTURE.md)
+
 - Stack
 
 - Queue
@@ -78,7 +82,7 @@ create(type: someType): someClass // - it's return a class of algorithm/data-str
 
 - Linked List
 
-- Heap
+- Heap(Min, Max)
 
 - Tree
 
@@ -96,8 +100,18 @@ create(type: someType): someClass // - it's return a class of algorithm/data-str
 
 # BigONotation
 
-- Linear - O(n)
+[BigONotation](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/BIG-O-NOTATION.md)
 
-- Square -
+- Linear
 
-- Log
+- Quadratic time
+
+- Logarithmic time
+
+- Linearithmic time
+
+- Exponential time
+
+```ts
+  check(steps: number) // It's check BigONotation by count of steps
+```
