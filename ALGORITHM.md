@@ -99,7 +99,7 @@ Wikipedia: https://en.wikipedia.org/wiki/Radix_sort<br />
 
 # Counting Sort
 
-In computer science, counting sort is an algorithm for sorting a collection of objects according to keys that are small positive integers; that is, it is an integer sorting algorithm<br />
+Counting sort is a sorting technique based on keys between a specific range. It works by counting the number of objects having distinct key values (kind of hashing). Then do some arithmetic to calculate the position of each object in the output sequence.Counting sort makes assumptions about the data, for example, it assumes that values are going to be in the range of 0 to 10 or 10 – 99 etc, Some other assumptions counting sort makes are input data will be all real numbers.<br />
 
 Wikipedia: https://en.wikipedia.org/wiki/Counting_sort<br />
 

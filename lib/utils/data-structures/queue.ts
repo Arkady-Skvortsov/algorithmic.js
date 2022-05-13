@@ -34,7 +34,7 @@ class Queue {
   }
 
   public print() {
-    return this.queue.join(' ');
+    return this.queue;
   }
 }
 

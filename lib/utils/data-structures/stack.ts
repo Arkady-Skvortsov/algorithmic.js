@@ -34,7 +34,7 @@ class Stack {
   }
 
   public print() {
-    return this.stack.join(' ');
+    return this.stack;
   }
 }
 

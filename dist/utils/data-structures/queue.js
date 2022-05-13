@@ -28,7 +28,7 @@ class Queue {
         return this.queue.length === 0;
     }
     print() {
-        return this.queue.join(' ');
+        return this.queue;
     }
 }
 exports.Queue = Queue;

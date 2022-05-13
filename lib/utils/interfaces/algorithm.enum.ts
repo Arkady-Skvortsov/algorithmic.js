@@ -8,6 +8,7 @@ enum algorithmEnum {
   'SHELL-SORT',
   'HEAP-SORT',
   'SMOOTH-SORT',
+  'FIBONACCI-NUMBERS',
   'PATIENCE-SORT',
   'RADIX-SORT',
   'COUNTING-SORT',

@@ -28,7 +28,7 @@ class Stack {
         return this.stack.length === 0;
     }
     print() {
-        return this.stack.join(' ');
+        return this.stack;
     }
 }
 exports.Stack = Stack;
