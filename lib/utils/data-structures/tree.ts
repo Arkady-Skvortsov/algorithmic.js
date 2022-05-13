@@ -81,17 +81,17 @@ class BinaryTree {
     }
   }
 
-  private findSmallestTreeNode(element: any) {
+  private findSmallestTreeNode(element: any): any {
     while (element.left !== null) element = element.left;
 
     return element;
   }
 
-  public getRootOfTree() {
+  public getRootOfTree(): any {
     return this.root.element;
   }
 
-  public find(element: any) {
+  public find(element: any): any {
     if (this.root === null) return false;
 
     let current = this.root;
@@ -161,17 +161,36 @@ class BinaryTree {
     this.root = null;
   }
 
-  public has(element: any) {
+  public has(element: any): boolean {
     return this.find(element) ? true : false;
   }
 
-  public flipBinaryTree() {}
+  public invertTree(root = this.root): any {
+    if (root === null) return;
 
-  public getSize() {
+    let temp;
+
+    this.invertTree(root.left);
+    this.invertTree(root.right);
+
+    temp = root.left;
+    root.left = root.right;
+    root.right = temp;
+
+    return root;
+  }
+
+  public recursiveTraversal() {
+    let root = this.root;
+
+    return Object.keys(root).forEach((rt) => rt);
+  }
+
+  public getSize(): number {
     return this.size;
   }
 
-  public isEmpty() {
+  public isEmpty(): boolean {
     return this.getSize() === 0;
   }
 
@@ -179,16 +198,5 @@ class BinaryTree {
     return { ...this.root };
   }
 }
-
-const tree = new BinaryTree();
-
-tree.add(120);
-tree.add(140);
-tree.add(200);
-tree.add(20);
-tree.add(110);
-
-console.log(tree.has(20));
-console.log(tree.print());
 
 export { BinaryTree };

@@ -30,7 +30,7 @@ class Stack {
   }
 
   public isEmpty() {
-    return this.stack.length === 0;
+    return this.getSize() === 0;
   }
 
   public print() {

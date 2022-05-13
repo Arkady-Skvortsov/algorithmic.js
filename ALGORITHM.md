@@ -122,14 +122,6 @@ Wikipedia: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm<br />
 
 <p style="text-align: center"><img width="400" src="./assets/algorithms/dijkstras-algorithm.jpg" /></p><br />
 
-# Caching
-
-In computing, a cache is a hardware or software component that stores data so that future requests for that data can be served faster; the data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere. A cache hit occurs when the requested data can be found in a cache, while a cache miss occurs when it cannot. Cache hits are served by reading data from the cache, which is faster than recomputing a result or reading from a slower data store; thus, the more requests that can be served from the cache, the faster the system performs.
-
-Wikipedia: https://en.wikipedia.org/wiki/Cache_(computing)
-
-<p style="text-align: center"><img width="400" src="./assets/algorithms/" /></p><br />
-
 # Diffie Hellman Key Exchange
 
 Diffie–Hellman key exchange[nb 1] is a method of securely exchanging cryptographic keys over a public channel and was one of the first public-key protocols as conceived by Ralph Merkle and named after Whitfield Diffie and Martin Hellman. DH is one of the earliest practical examples of public key exchange implemented within the field of cryptography. Published in 1976 by Diffie and Hellman, this is the earliest publicly known work that proposed the idea of a private key and a corresponding public key.<br />
@@ -156,11 +148,11 @@ Wikipedia: https://en.wikipedia.org/wiki/HyperLogLog<br />
 
 # Hash Function
 
-A hash function is any function that can be used to map data of arbitrary size to fixed-size values. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. The values are usually used to index a fixed-size table called a hash table. Use of a hash function to index a hash table is called hashing or scatter storage addressing.Hash functions and their associated hash tables are used in data storage and retrieval applications to access data in a small and nearly constant time per retrieval. They require an amount of storage space only fractionally greater than the total space required for the data or records themselves<br />
+A hash function is any function that can be used to map data of arbitrary size to fixed-size values. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. The values are usually used to index a fixed-size table called a hash table. Use of a hash function to index a hash table is called hashing or scatter storage addressing. Hash functions and their associated hash tables are used in data storage and retrieval applications to access data in a small and nearly constant time per retrieval. They require an amount of storage space only fractionally greater than the total space required for the data or records themselves<br />
 
 Wikipedia: https://en.wikipedia.org/wiki/Hash_function<br />
 
-<p style="text-align: center"><img align="center" width="400" src="./assets/algorithms/hash-function.png" /></p><br />
+<p style="text-align: center"><img width="400" src="./assets/algorithms/hash-function.png" /></p><br />
 
 # Fibonacci
 
@@ -171,3 +163,27 @@ Wikipedia: https://en.wikipedia.org/wiki/Fibonacci_number <br />
 ```ts
 // Formula: Fn = F(n - 1) + F(n + 2)
 ```
+
+# Bucket Sorting
+
+Bucket sort is a sorting algorithm in which the sorted elements are distributed among a finite number of separate blocks so that all elements in each next block in order are always larger than in the previous one. Each block is then sorted separately, either recursively by the same method or by another.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Bucket_sort <br />
+
+<p style="text-align: center"><img width="400" src="./assets/algorithms/bucket-sorting.png" /></p>
+
+# Insertion Sorting
+
+A sorting algorithm in which the elements of the input sequence are examined one at a time, and each new incoming element is placed in a suitable place among the previously sorted elements.<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Insertion_sort <br />
+
+<p style="text-align: center"><img width="400" src="./assets/algorithms/insertion-sort.png" /></p>
+
+# Cycle Sorting
+
+Round-robin sort is an unstable in-place sorting algorithm, a comparison sort that is theoretically optimal in terms of the total number of entries in the original array, unlike any other in-place sorting algorithm<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Cycle_sort<br />
+
+<p style="text-align: center"><img width="400" src="./assets/algorithms/cycle-sort.png"></p>

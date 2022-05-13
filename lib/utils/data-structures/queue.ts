@@ -30,7 +30,7 @@ class Queue {
   }
 
   public isEmpty() {
-    return this.queue.length === 0;
+    return this.getSize() === 0;
   }
 
   public print() {

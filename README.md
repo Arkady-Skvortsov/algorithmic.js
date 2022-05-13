@@ -11,7 +11,7 @@ implementation for Javascript/Typescript
 
 # Methods docs
 
-[Methods](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/METHODS.md)
+If you want to know how working a library, here: [Methods](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/METHODS.md)
 
 # "Why do I need to use algorithms ?" - answer here
 

@@ -25,7 +25,7 @@ class Queue {
         return this.queue.length;
     }
     isEmpty() {
-        return this.queue.length === 0;
+        return this.getSize() === 0;
     }
     print() {
         return this.queue;

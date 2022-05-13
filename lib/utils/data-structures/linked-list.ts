@@ -65,7 +65,6 @@ class LinkedList {
   public first() {
     let idx = 0;
     let curr = this.head;
-    let prev = curr;
 
     if (idx === 0) {
       this.head = curr.next;
@@ -172,16 +171,5 @@ class LinkedList {
     return str;
   }
 }
-
-let linkedList = new LinkedList();
-
-linkedList.add(20);
-linkedList.add(100);
-linkedList.add(120);
-linkedList.add(200);
-linkedList.add(202);
-
-console.log(linkedList.peek());
-console.log(linkedList.find(200));
 
 export { LinkedList };
