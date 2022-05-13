@@ -161,3 +161,13 @@ A hash function is any function that can be used to map data of arbitrary size t
 Wikipedia: https://en.wikipedia.org/wiki/Hash_function<br />
 
 <p style="text-align: center"><img align="center" width="400" src="./assets/algorithms/hash-function.png" /></p><br />
+
+# Fibonacci
+
+In mathematics, the Fibonacci numbers, commonly denoted Fn, form a sequence, the Fibonacci sequence, in which each number is the sum of the two preceding ones. The sequence commonly starts from 0 and 1, although some authors omit the initial terms and start the sequence from 1 and 1 or from 1 and 2. Starting from 0 and 1, the next few values in the sequence are: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144<br />
+
+Wikipedia: https://en.wikipedia.org/wiki/Fibonacci_number <br />
+
+```ts
+// Formula: Fn = F(n - 1) + F(n + 2)
+```

@@ -1,10 +1,10 @@
 class RecursiveTraversalBinaryTree {
   constructor() {}
 
-  public run(tree: any[]) {
+  public run(tree: {}) {
     let summ = 0;
 
-    tree.forEach((tr: any) => {
+    Object.keys(tree).forEach((tr: any) => {
       summ += tr.right;
 
       if (!tr.left) {

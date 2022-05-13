@@ -1,4 +1,4 @@
-import { bigONotationType } from './interfaces/big-o-notation.enum';
+import { bigONotationType } from '../interfaces/big-o-notation.enum';
 
 class Time {
   private time: number;

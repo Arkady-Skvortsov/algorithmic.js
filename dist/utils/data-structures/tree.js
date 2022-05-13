@@ -25,7 +25,6 @@ class BinaryTree {
             return this;
         }
         let current = this.root;
-        this.size++;
         while (current) {
             if (element === current.element)
                 return;
@@ -43,8 +42,8 @@ class BinaryTree {
                 }
                 current = current.right;
             }
-            this.size++;
         }
+        this.size++;
     }
     remove(element) {
         this.root = this.removeTreeNode(this.root, element);
@@ -86,59 +85,72 @@ class BinaryTree {
     getRootOfTree() {
         return this.root.element;
     }
-    peek() {
-        if (!this.root)
+    find(element) {
+        if (this.root === null)
             return false;
         let current = this.root;
-        while ((current.left !== null && current.right !== null) ??
-            current.left === null) { }
-    }
-    setRootdTo(element) {
-        let root = this.root;
-        while (root.left !== null && root.right !== null) {
-            let nextLeft = root.left;
-            let nextRight = root.right;
-            return nextLeft && nextRight;
+        while (current.element !== element) {
+            if (element < current.element) {
+                current = current.left;
+            }
+            else {
+                current = current.right;
+            }
+            if (current === null)
+                return null;
         }
+        return { ...current };
+    }
+    findMaxHeight(root = this.root) {
+        if (root === null)
+            return -1;
+        let left = this.findMaxHeight(root.left);
+        let right = this.findMaxHeight(root.right);
+        return left > right ? left + 1 : right + 1;
+    }
+    findMinHeight(root = this.root) {
+        if (root === null)
+            return -1;
+        let left = this.findMinHeight(root.left);
+        let right = this.findMinHeight(root.right);
+        return left < right ? left + 1 : right + 1;
+    }
+    findMinNode() {
+        let root = this.root;
+        while (root.left !== null) {
+            root = root.left;
+        }
+        return root.element;
+    }
+    findMaxNode() {
+        let root = this.root;
+        while (root.right !== null) {
+            root = root.right;
+        }
+        return root.element;
+    }
+    isBalanced() {
+        return this.findMinHeight() >= this.findMaxHeight() - 1;
+    }
+    setRootToElement(element) {
+        let root = this.find(element);
+        this.root = root;
     }
     releaseTheRoot() {
         this.root = null;
     }
     has(element) {
-        if (!this.root)
-            return false;
-        let current = this.root;
-        let found = false;
-        while (current && !found) {
-            if (element < current.element) {
-                current = current.left;
-            }
-            else if (element > current.element) {
-                current = current.right;
-            }
-            else {
-                found = current;
-            }
-        }
-        if (!found)
-            return false;
-        return true;
+        return this.find(element) ? true : false;
     }
+    flipBinaryTree() { }
     getSize() {
         return this.size;
     }
     isEmpty() {
-        return this.size === 0;
+        return this.getSize() === 0;
     }
     print() {
-        // let curr = this.root;
-        // let str = '';
-        // while (curr) {
-        //   str += curr.element + ' ';
-        //   curr = curr.left ?? curr.right;
-        // }
-        // return str;
-        return this.root;
+        return { ...this.root };
     }
 }
 exports.BinaryTree = BinaryTree;
@@ -147,7 +159,7 @@ tree.add(120);
 tree.add(140);
 tree.add(200);
 tree.add(20);
-tree.add(24);
-tree.add(30);
+tree.add(110);
+console.log(tree.has(20));
 console.log(tree.print());
 //# sourceMappingURL=tree.js.map

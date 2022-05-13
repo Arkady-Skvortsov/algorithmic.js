@@ -1,0 +1,1 @@
+{"version":3,"file":"fibonacci.js","sourceRoot":"","sources":["../../../lib/utils/algorithms/fibonacci.ts"],"names":[],"mappings":";;;AAAA,MAAM,SAAS;IACb,gBAAe,CAAC;IAET,GAAG,CAAC,GAAW;QACpB,OAAO,GAAG,IAAI,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,IAAI,CAAC,GAAG,CAAC,GAAG,GAAG,CAAC,CAAC,GAAG,IAAI,CAAC,GAAG,CAAC,GAAG,GAAG,CAAC,CAAC,CAAC;IAChE,CAAC;CACF;AAEQ,8BAAS"}

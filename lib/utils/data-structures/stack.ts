@@ -17,6 +17,10 @@ class Stack {
     return this.stack[0];
   }
 
+  public has(element: any) {
+    return this.stack.find((s: any) => s === element) ? true : false;
+  }
+
   public peek() {
     return this.stack[this.stack.length - 1];
   }

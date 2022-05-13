@@ -17,6 +17,10 @@ class Queue {
     return this.queue[0];
   }
 
+  public has(elem: any) {
+    return this.queue.find((q: any) => q === elem) ? true : false;
+  }
+
   public peek() {
     return this.queue[this.queue.length - 1];
   }

@@ -50,6 +50,10 @@ class HashTable {
     first() {
         return Object.values(this.hashTable)[0];
     }
+    clear() {
+        let hash = Object.keys(this.hashTable);
+        hash.splice(0, hash.length);
+    }
     peek() {
         return Object.values(this.hashTable)[Object.keys(this.hashTable).length - 1];
     }

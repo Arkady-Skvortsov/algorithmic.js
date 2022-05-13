@@ -5,31 +5,15 @@ class RecursiveTraversalBinaryTree {
     constructor() { }
     run(tree) {
         let summ = 0;
-        tree.map((tr) => {
-            summ += tr.left;
-            if (!tr.right) {
-                return tr.left;
+        Object.keys(tree).forEach((tr) => {
+            summ += tr.right;
+            if (!tr.left) {
+                return tr.right;
             }
-            summ += this.run(tr.right);
+            summ += this.run(tr.left);
         });
         return summ;
     }
 }
 exports.RecursiveTraversalBinaryTree = RecursiveTraversalBinaryTree;
-const recursive = new RecursiveTraversalBinaryTree();
-console.log(recursive.run([
-    {
-        element: 120,
-        left: {
-            element: 20,
-            left: null,
-            right: { element: 24, left: null, right: null },
-        },
-        right: {
-            element: 140,
-            left: null,
-            right: { element: 200, left: null, right: null },
-        },
-    },
-]));
 //# sourceMappingURL=recursive-traversal-binary-tree.js.map
