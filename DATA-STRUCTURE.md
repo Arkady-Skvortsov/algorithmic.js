@@ -12,17 +12,15 @@ Wikipedia - https://en.wikipedia.org/wiki/Data_structure<br />
 
 Stacks are known as LIFO (Last In First Out) structures. This means the element placed last can be accessed first. You can “push” a new element onto the top of the stack, or you can “pop,” deleting the element inserted last which is at the top of the stack.<br />
 
+Where is using: ;
+
 Wikipedia: https://en.wikipedia.org/wiki/Stack<br />
 
 <p style="text-align: center"><img width="400" src="./assets/data-structure/stack.jpg" /></p>
 
 # Queue
 
-A queue functions similarly to a stack, but instead of being a LIFO structure, it is a FIFO (First In First Out) structure. The easiest way to think about a queue is to think of a line of people waiting to enter a building. The person at the beginning of the line will enter the building first, while the person at the end will enter last.
-
-You can enqueue an element in this structure, which means inserting the element to the end of the queue. You can also dequeue an element, which means deleting an element from the beginning of the queue.
-
-Queues are often used to manage threads in multithreading, and they are (not surprisingly) used to implement priority queuing systems.<br />
+A queue functions similarly to a stack, but instead of being a LIFO structure, it is a FIFO (First In First Out) structure. The easiest way to think about a queue is to think of a line of people waiting to enter a building. The person at the beginning of the line will enter the building first, while the person at the end will enter last.You can enqueue an element in this structure, which means inserting the element to the end of the queue. You can also dequeue an element, which means deleting an element from the beginning of the queue.Queues are often used to manage threads in multithreading, and they are (not surprisingly) used to implement priority queuing systems.<br />
 
 Wikipedia: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)<br />
 
@@ -30,13 +28,7 @@ Wikipedia: https://en.wikipedia.org/wiki/Queue_(abstract_data_type)<br />
 
 # Hash-Table
 
-A hash table structure associates each value with a key and then stores them. This makes it easy to look up values efficiently using a key. It’s an efficient way to insert and search for data regardless of its size, as it makes it easy to identify a specific object from a group of similar objects.
-
-For example, if you go to college, you may be assigned a unique student ID number. This ID number is a key that can be used to retrieve information about you and your student record.
-
-A hash table uses what’s known as a “hash function” to map a data set of any size to one of a fixed size—the hash table. The values that a hash function returns are known as “hash values.”
-
-Hash tables are commonly used to create database indexes, to create associative arrays and to create a “set.”<br />
+A hash table structure associates each value with a key and then stores them. This makes it easy to look up values efficiently using a key. It’s an efficient way to insert and search for data regardless of its size, as it makes it easy to identify a specific object from a group of similar objects.For example, if you go to college, you may be assigned a unique student ID number. This ID number is a key that can be used to retrieve information about you and your student record.A hash table uses what’s known as a “hash function” to map a data set of any size to one of a fixed size—the hash table. The values that a hash function returns are known as “hash values.”Hash tables are commonly used to create database indexes, to create associative arrays and to create a “set.”<br />
 
 Wikipedia: https://en.wikipedia.org/wiki/Hash_table<br />
 
@@ -44,10 +36,7 @@ Wikipedia: https://en.wikipedia.org/wiki/Hash_table<br />
 
 # Array
 
-One of the simplest data structures, an array is a collection of items that are stored sequentially. An array contains values or variables—known as “elements”—of the same data type and is of a fixed size, so you cannot change the size of an array. Each item in an array is indexed starting with 0.
-
-The best way to think about an array is like a weekly medication organizer. It includes small containers lined up in a sequence, and each container has elements inside.
-
+One of the simplest data structures, an array is a collection of items that are stored sequentially. An array contains values or variables—known as “elements”—of the same data type and is of a fixed size, so you cannot change the size of an array. Each item in an array is indexed starting with 0.The best way to think about an array is like a weekly medication organizer. It includes small containers lined up in a sequence, and each container has elements inside.
 Arrays are commonly used as structures for building other, more complicated data structures. They are also used for sorting algorithms.<br />
 
 Wikipedia: https://en.wikipedia.org/wiki/Array<br />
@@ -67,9 +56,7 @@ Wikipedia: https://en.wikipedia.org/wiki/Linked_list#:~:text=In%20computer%20sci
 # Heap
 
 Similarly, a heap is a type of binary tree in which the parent nodes are compared to their children. This allows the values within the nodes to be arranged accordingly. Heaps can be represented as trees, but they can also be represented as binary arrays.
-
 There are two types of heaps. In a min heap, the parent’s key is less than or equal to the keys of its children. In a max heap, the parent’s key is greater than or equal to the keys of its children.
-
 Heaps are often used in algorithms to create priority queues, and to find the smallest or largest value in an array.<br />
 
 Wikipedia: https://en.wikipedia.org/wiki/Heap_(data_structure)<br />

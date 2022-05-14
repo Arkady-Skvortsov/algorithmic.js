@@ -22,6 +22,7 @@ class CountingSort {
         supplementary[i] -= 1;
       }
     }
+
     return arr;
   }
 }

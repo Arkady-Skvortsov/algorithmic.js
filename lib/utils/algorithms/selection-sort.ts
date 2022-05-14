@@ -1,26 +1,30 @@
-class SelectionSort {
-  private array: any[];
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  constructor(array: any[]) {
-    this.array = array;
+class SelectionSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
   }
 
-  public run() {
-    for (let i = 0; i < this.array.length; i++) {
+  public run(array: any[]): algorithmPayload {
+    for (let i = 0; i < array.length; i++) {
       let indexMin = i;
 
-      for (let j = i + 1; j < this.array.length; j++) {
-        if (this.array[j] < this.array[indexMin]) {
+      for (let j = i + 1; j < array.length; j++) {
+        if (array[j] < array[indexMin]) {
           indexMin = j;
         }
+
+        this.count += 1;
       }
 
-      let element = this.array[i];
-      this.array[i] = this.array[indexMin];
-      this.array[indexMin] = element;
+      let element = array[i];
+      array[i] = array[indexMin];
+      array[indexMin] = element;
     }
 
-    return this.array;
+    return { array, count: this.count };
   }
 }
 

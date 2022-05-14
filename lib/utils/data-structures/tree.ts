@@ -161,6 +161,8 @@ class BinaryTree {
     this.root = null;
   }
 
+  public next(type: 'left' | 'right') {}
+
   public has(element: any): boolean {
     return this.find(element) ? true : false;
   }
@@ -178,12 +180,6 @@ class BinaryTree {
     root.right = temp;
 
     return root;
-  }
-
-  public recursiveTraversal() {
-    let root = this.root;
-
-    return Object.keys(root).forEach((rt) => rt);
   }
 
   public getSize(): number {

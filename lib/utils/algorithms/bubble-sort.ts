@@ -1,22 +1,26 @@
-class BubbleSort {
-  private array: any[];
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  constructor(array: any[]) {
-    this.array = array;
+class BubbleSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
   }
 
-  public run(): any[] {
-    for (let i = 0; i < this.array.length; i++) {
-      for (let j = 0; j < this.array.length; j++) {
-        if (this.array[j + 1] < this.array[j]) {
-          let elem = this.array[j];
-          this.array[j] = this.array[j + 1];
-          this.array[j + 1] = elem;
+  public run(array: any[]): algorithmPayload {
+    for (let i = 0; i < array.length; i++) {
+      for (let j = 0; j < array.length; j++) {
+        if (array[j + 1] < array[j]) {
+          let elem = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = elem;
         }
+
+        this.count += 1;
       }
     }
 
-    return this.array;
+    return { array: array, count: this.count };
   }
 }
 

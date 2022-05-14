@@ -1,5 +1,9 @@
 class BinarySearch {
-  constructor() {}
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
 
   public run(array: any[], item: any) {
     let start = 0;
@@ -9,6 +13,8 @@ class BinarySearch {
     let position = -1;
 
     while (found === false && start <= end) {
+      this.count += 1;
+
       middle = Math.floor((start + end) / 2);
 
       array[middle] === item
@@ -18,7 +24,7 @@ class BinarySearch {
         : (start = middle + 1);
     }
 
-    return position;
+    return { index: position, time: this.count };
   }
 }
 

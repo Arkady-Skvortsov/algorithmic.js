@@ -41,7 +41,7 @@ Time complexity - https://en.wikipedia.org/wiki/Time_complexity
 //O(2^5) = 32
 ```
 
-# O(n!) -
+# O(n!) - Factorial time
 
 ```ts
 //O(5!) = 120

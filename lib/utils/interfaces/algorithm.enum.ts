@@ -22,9 +22,14 @@ type algorithmType =
   | 'HYPER-LOG-LOG'
   | 'HASH-FUNCTION';
 
+interface algorithmPayload {
+  array: any[];
+  count: number;
+}
+
 abstract class IAlgorithm {
   abstract getSize(): number;
   abstract print(): string;
 }
 
-export { algorithmType };
+export { algorithmType, algorithmPayload };

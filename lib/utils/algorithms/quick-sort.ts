@@ -1,33 +1,34 @@
-class QuickSort {
-  private array: any[];
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  constructor(array: any[]) {
-    this.array = array;
+class QuickSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
   }
 
-  public run(): any {
-    let privotIndex = Math.floor(this.array.length / 2);
-    let privot = this.array[privotIndex];
+  public run(array: any[]): any {
+    let privotIndex = Math.floor(array.length / 2);
+    let privot = array[privotIndex];
     let less = [];
     let greater = [];
 
-    if (this.array.length <= 1) {
-      return this.array;
+    if (array.length <= 1) {
+      return array;
     }
 
-    for (let i = 0; i < this.array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
+      this.count += 1;
+
       if (i == privotIndex) continue;
 
-      this.array[i] < privot
-        ? less.push(this.array[i])
-        : greater.push(this.array[i]);
+      array[i] < privot ? less.push(array[i]) : greater.push(array[i]);
     }
 
-    return [
-      ...new QuickSort(less).run(),
-      privot,
-      ...new QuickSort(greater).run(),
-    ];
+    return {
+      array: [...this.run(less), privot, ...this.run(greater)],
+      count: this.count,
+    };
   }
 }
 

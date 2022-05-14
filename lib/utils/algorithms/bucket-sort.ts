@@ -18,10 +18,4 @@ class BucketSort {
   }
 }
 
-const bucketSort = new BucketSort();
-
-console.log(
-  bucketSort.run([1, -1, -20, -90, 200, 10, 9, 8, 20, 15, 100, 54, 28]),
-);
-
 export { BucketSort };
