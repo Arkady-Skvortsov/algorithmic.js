@@ -1,7 +1,13 @@
-class CountingSort {
-  constructor() {}
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  public run(arr: any[]) {
+class CountingSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
+
+  public run(arr: any[]): algorithmPayload {
     let j = 0;
     let supplementary: any[] = [];
 
@@ -17,13 +23,15 @@ class CountingSort {
     }
 
     for (let i = min; i <= max; i++) {
+      this.count += 1;
+
       while (supplementary[i] > 0) {
         arr[j++] = i;
         supplementary[i] -= 1;
       }
     }
 
-    return arr;
+    return { array: arr, count: this.count };
   }
 }
 

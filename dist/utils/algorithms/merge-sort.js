@@ -2,7 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MergeSort = void 0;
 class MergeSort {
-    constructor() { }
+    count;
+    constructor() {
+        this.count = 0;
+    }
     run(array) {
         const half = array.length / 2;
         if (array.length < 2) {

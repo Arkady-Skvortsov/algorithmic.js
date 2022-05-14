@@ -2,7 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HeapSort = void 0;
 class HeapSort {
-    constructor() { }
+    count;
+    constructor() {
+        this.count = 0;
+    }
     heapify(array, size, i) {
         let max = i;
         let left = 2 * i + 1;
@@ -20,15 +23,16 @@ class HeapSort {
     }
     run(array) {
         let size = array.length;
-        for (let i = Math.floor(size / 2 - 1); i >= 0; i--)
+        for (let i = Math.floor(size / 2 - 1); i >= 0; i--) {
             this.heapify(array, size, i);
+        }
         for (let i = size - 1; i >= 0; i--) {
             let temp = array[0];
             array[0] = array[i];
             array[i] = temp;
             this.heapify(array, i, 0);
         }
-        return array;
+        return { array, count: this.count };
     }
 }
 exports.HeapSort = HeapSort;

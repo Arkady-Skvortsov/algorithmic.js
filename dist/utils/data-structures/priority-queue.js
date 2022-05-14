@@ -37,6 +37,9 @@ class PriorityQueue {
     dequeue() {
         this.items.shift();
     }
+    clear() {
+        this.items.length = 0;
+    }
     has(element) {
         return this.items.find((item) => item === element) ? true : false;
     }

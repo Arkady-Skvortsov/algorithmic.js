@@ -147,6 +147,10 @@ class LinkedList {
     return this.size === 0;
   }
 
+  public clear() {
+    this.head = null;
+  }
+
   public getSize() {
     let count = 0;
     let node = this.head;

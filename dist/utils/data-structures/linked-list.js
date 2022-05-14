@@ -121,6 +121,9 @@ class LinkedList {
     isEmpty() {
         return this.size === 0;
     }
+    clear() {
+        this.head = null;
+    }
     getSize() {
         let count = 0;
         let node = this.head;

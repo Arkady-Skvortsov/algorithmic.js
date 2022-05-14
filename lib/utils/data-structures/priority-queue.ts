@@ -46,6 +46,10 @@ class PriorityQueue {
     this.items.shift();
   }
 
+  public clear() {
+    this.items.length = 0;
+  }
+
   public has(element: any) {
     return this.items.find((item) => item === element) ? true : false;
   }

@@ -53,7 +53,7 @@ class Graph {
         const second = this.AdjList.get(w).find((val) => val === v);
         return first && second ? true : false;
     }
-    dfs(startingNode) {
+    depthFirstSearch(startingNode) {
         const visited = {};
         this.DFSUtil(startingNode, visited);
     }
@@ -68,7 +68,7 @@ class Graph {
         }
         return vert;
     }
-    bfs(startingNode) {
+    breadthFirstSearch(startingNode) {
         let visited = {};
         let q = new queue_1.Queue();
         visited[startingNode] = true;
@@ -88,6 +88,9 @@ class Graph {
     }
     getSize() {
         return this.AdjList.size;
+    }
+    clear() {
+        this.AdjList.clear();
     }
     isEmpty() {
         return this.getSize() === 0;

@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LinearSearch = void 0;
-const big_o_notation_1 = require("../big-o-notation");
 class LinearSearch {
     count;
     constructor() {
@@ -17,7 +16,4 @@ class LinearSearch {
     }
 }
 exports.LinearSearch = LinearSearch;
-const linearSearch = new LinearSearch();
-const bigONotation = new big_o_notation_1.BigONotation(linearSearch.run([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 8).time);
-console.log(bigONotation.checkComplexity());
 //# sourceMappingURL=linear-search.js.map

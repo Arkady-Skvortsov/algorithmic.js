@@ -87,6 +87,18 @@ class BinaryTree {
     return element;
   }
 
+  public removeSmallestTreeNode() {
+    const smallestTree = Math.min(...this.breadthFirstSearch());
+
+    this.root = this.removeTreeNode(this.root, smallestTree);
+  }
+
+  public removeBiggestTreeNode() {
+    const biggestTree = Math.max(...this.breadthFirstSearch());
+
+    this.root = this.removeTreeNode(this.root, biggestTree);
+  }
+
   public getRootOfTree(): any {
     return this.root.element;
   }
@@ -157,11 +169,9 @@ class BinaryTree {
     this.root = root;
   }
 
-  public releaseTheRoot() {
+  public clear() {
     this.root = null;
   }
-
-  public next(type: 'left' | 'right') {}
 
   public has(element: any): boolean {
     return this.find(element) ? true : false;
@@ -180,6 +190,75 @@ class BinaryTree {
     root.right = temp;
 
     return root;
+  }
+
+  public summOfTree(): number {
+    let arr = this.breadthFirstSearch();
+
+    return arr.reduce((first, second) => first + second, 0);
+  }
+
+  public breadthFirstSearch(): any[] {
+    let visited = [];
+    let queue = [];
+    let current = this.root;
+
+    queue.push(current);
+
+    while (queue.length) {
+      current = queue.shift();
+      visited.push(current.element);
+
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+    }
+
+    return visited;
+  }
+
+  public preOrder(): any[] {
+    let visited: any[] = [];
+    let current = this.root;
+
+    let traverse = (node: any) => {
+      visited.push(node.element);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+
+    traverse(current);
+
+    return visited;
+  }
+
+  public postOrder(): any[] {
+    let visited: any[] = [];
+    let current = this.root;
+
+    let traverse = (node: any) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      visited.push(node.element);
+    };
+
+    traverse(current);
+
+    return visited;
+  }
+
+  public inOrder(): any[] {
+    let visited: any[] = [];
+    let current = this.root;
+
+    let traverse = (node: any) => {
+      if (node.left) traverse(node.left);
+      visited.push(node.element);
+      if (node.right) traverse(node.right);
+    };
+
+    traverse(current);
+
+    return visited;
   }
 
   public getSize(): number {

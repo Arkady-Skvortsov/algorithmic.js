@@ -1,7 +1,14 @@
-class MergeSort {
-  constructor() {}
+import { BigONotation } from '../big-o-notation';
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  public run(array: any[]): any[] {
+class MergeSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
+
+  public run(array: any[]): any {
     const half = array.length / 2;
 
     if (array.length < 2) {

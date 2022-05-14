@@ -1,5 +1,12 @@
+import { BigONotation } from '../big-o-notation';
+import { algorithmPayload } from '../interfaces/algorithm.enum';
+
 class HeapSort {
-  constructor() {}
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
 
   private heapify(array: any[], size: number, i: number) {
     let max = i;
@@ -19,11 +26,12 @@ class HeapSort {
     }
   }
 
-  public run(array: any[]): any[] {
+  public run(array: any[]): algorithmPayload {
     let size = array.length;
 
-    for (let i = Math.floor(size / 2 - 1); i >= 0; i--)
+    for (let i = Math.floor(size / 2 - 1); i >= 0; i--) {
       this.heapify(array, size, i);
+    }
 
     for (let i = size - 1; i >= 0; i--) {
       let temp = array[0];
@@ -33,7 +41,7 @@ class HeapSort {
       this.heapify(array, i, 0);
     }
 
-    return array;
+    return { array, count: this.count };
   }
 }
 

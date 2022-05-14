@@ -15,6 +15,9 @@ class Stack {
     first() {
         return this.stack[0];
     }
+    clear() {
+        this.stack.length = 0;
+    }
     has(element) {
         return this.stack.find((s) => s === element) ? true : false;
     }

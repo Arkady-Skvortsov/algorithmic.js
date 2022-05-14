@@ -7,7 +7,7 @@ class QuickSort {
         this.count = 0;
     }
     run(array) {
-        let privotIndex = Math.floor(array.length / 2);
+        let privotIndex = array.length / 2;
         let privot = array[privotIndex];
         let less = [];
         let greater = [];

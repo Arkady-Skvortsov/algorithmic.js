@@ -17,13 +17,4 @@ class LinearSearch {
     return;
   }
 }
-
-const linearSearch = new LinearSearch();
-
-const bigONotation = new BigONotation(
-  linearSearch.run([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 8).time,
-);
-
-console.log(bigONotation.checkComplexity());
-
 export { LinearSearch };

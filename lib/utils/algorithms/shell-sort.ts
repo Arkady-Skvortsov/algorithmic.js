@@ -1,7 +1,13 @@
-class ShellSort {
-  constructor() {}
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  public run(arr: any[]) {
+class ShellSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
+
+  public run(arr: any[]): algorithmPayload {
     let n = arr.length;
 
     for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
@@ -17,7 +23,7 @@ class ShellSort {
       }
     }
 
-    return arr;
+    return { array: arr, count: this.count };
   }
 }
 

@@ -108,10 +108,14 @@ create(type: someType): someClass // - it's return a class of algorithm/data-str
 
 ```
 
-- Tree
+- Binary Tree
 
 ```ts
+preOrder(); //
 
+postOrder(); //
+
+inOrder(); //
 ```
 
 - Red Black Tree
@@ -136,6 +140,14 @@ create(type: someType): someClass // - it's return a class of algorithm/data-str
 
 ```ts
 bfs(); //
+```
+
+```ts
+clear(); //
+
+getSize(); //
+
+isEmpty(); //
 ```
 
 ---

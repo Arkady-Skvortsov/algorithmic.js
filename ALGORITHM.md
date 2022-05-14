@@ -15,6 +15,9 @@ In computer science, a linear search or sequential search is a method for findin
 
 Wikipedia: https://en.wikipedia.org/wiki/Linear_search<br />
 
+Best Time Complexity: O(n)
+Worst Time Complexity: O(n^2)<br />
+
 <p style="text-align: center"><img width="400" src="./assets/algorithms/linear-search.png" /></p><br />
 
 # Binary search
@@ -52,6 +55,9 @@ Wikipedia: https://en.wikipedia.org/wiki/Bubble_sort<br />
 # Merge Sort
 
 In computer science, merge sort (also commonly spelled as mergesort) is an efficient, general-purpose, and comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the order of equal elements is the same in the input and output. Merge sort is a divide-and-conquer algorithm that was invented by John von Neumann in 1945. A detailed description and analysis of bottom-up merge sort appeared in a report by Goldstine and von Neumann as early as 1948.<br />
+
+Best Time Complexity: O(n \* log n)
+Worst Time Complexity: O(n^2)<br />
 
 Wikipedia: https://en.wikipedia.org/wiki/Merge_sort<br />
 
@@ -187,3 +193,7 @@ Round-robin sort is an unstable in-place sorting algorithm, a comparison sort th
 Wikipedia: https://en.wikipedia.org/wiki/Cycle_sort<br />
 
 <p style="text-align: center"><img width="400" src="./assets/algorithms/cycle-sort.png"></p>
+
+# Bredth-First Search
+
+# Depth-First Search

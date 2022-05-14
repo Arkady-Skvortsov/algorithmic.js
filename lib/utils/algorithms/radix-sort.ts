@@ -1,7 +1,13 @@
-class RadixSort {
-  constructor() {}
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  public run(arr: any[]): any[] {
+class RadixSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
+
+  public run(arr: any[]): algorithmPayload {
     const maxNum = Math.max(...arr) * 10;
     let divisor = 10;
 
@@ -9,6 +15,7 @@ class RadixSort {
       let buckets: any = [...Array(10)].map(() => []);
 
       for (let num of arr) {
+        this.count++;
         buckets[Math.floor((num % divisor) / (divisor / 10))]?.push(num);
       }
 
@@ -16,7 +23,8 @@ class RadixSort {
 
       divisor *= 10;
     }
-    return arr;
+
+    return { array: arr, count: this.count };
   }
 }
 

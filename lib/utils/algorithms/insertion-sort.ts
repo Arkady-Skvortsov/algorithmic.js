@@ -1,7 +1,14 @@
-class InsertionSort {
-  constructor() {}
+import { BigONotation } from '../big-o-notation';
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  public run(array: any[]) {
+class InsertionSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
+
+  public run(array: any[]): algorithmPayload {
     let n = array.length;
 
     for (let i = 1; i < n; i++) {
@@ -10,13 +17,14 @@ class InsertionSort {
 
       while (j > -1 && current < array[j]) {
         array[j + 1] = array[j];
+
         j--;
       }
 
       array[j + 1] = current;
     }
 
-    return array;
+    return { array, count: this.count };
   }
 }
 

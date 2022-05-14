@@ -1,7 +1,14 @@
-class PatienceSort {
-  constructor() {}
+import { BigONotation } from '../big-o-notation';
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  public run(arr: any[]) {
+class PatienceSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
+
+  public run(arr: any[]): algorithmPayload {
     let piles = [];
     let sorted_sequence = [];
 
@@ -34,7 +41,7 @@ class PatienceSort {
 
     sorted_sequence = this.merge_piles(piles);
 
-    return sorted_sequence;
+    return { array: sorted_sequence, count: this.count };
   }
 
   private merge_piles(v: any) {

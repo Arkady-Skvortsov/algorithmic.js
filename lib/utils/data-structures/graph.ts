@@ -70,7 +70,7 @@ class Graph {
     return first && second ? true : false;
   }
 
-  public dfs(startingNode: string) {
+  public depthFirstSearch(startingNode: string) {
     const visited = {};
 
     this.DFSUtil(startingNode, visited);
@@ -90,7 +90,7 @@ class Graph {
     return vert;
   }
 
-  public bfs(startingNode: any): void {
+  public breadthFirstSearch(startingNode: any): void {
     let visited: any = {};
 
     let q = new Queue();
@@ -119,6 +119,10 @@ class Graph {
 
   public getSize(): number {
     return this.AdjList.size;
+  }
+
+  public clear() {
+    this.AdjList.clear();
   }
 
   public isEmpty(): boolean {

@@ -1,7 +1,13 @@
-class CycleSort {
-  constructor() {}
+import { algorithmPayload } from '../interfaces/algorithm.enum';
 
-  public run(array: any[]): any[] {
+class CycleSort {
+  private count: number;
+
+  constructor() {
+    this.count = 0;
+  }
+
+  public run(array: any[]): algorithmPayload {
     for (
       let currentIndex = 0;
       currentIndex < array.length - 1;
@@ -11,12 +17,15 @@ class CycleSort {
 
       let currentIndexCopy = currentIndex;
 
-      for (let i = currentIndex + 1; i < array.length; i++)
+      for (let i = currentIndex + 1; i < array.length; i++) {
         if (array[i] < item) currentIndexCopy++;
+      }
 
       if (currentIndexCopy == currentIndex) continue;
 
-      while (item == array[currentIndexCopy]) currentIndexCopy++;
+      while (item == array[currentIndexCopy]) {
+        currentIndexCopy++;
+      }
 
       let temp = array[currentIndexCopy];
       array[currentIndexCopy] = item;
@@ -25,8 +34,9 @@ class CycleSort {
       while (currentIndexCopy != currentIndex) {
         currentIndexCopy = currentIndex;
 
-        for (let i = currentIndex + 1; i < array.length; i++)
+        for (let i = currentIndex + 1; i < array.length; i++) {
           if (array[i] < item) currentIndexCopy++;
+        }
 
         while (item == array[currentIndexCopy]) currentIndexCopy++;
 
@@ -36,7 +46,7 @@ class CycleSort {
       }
     }
 
-    return array;
+    return { array, count: this.count };
   }
 }
 

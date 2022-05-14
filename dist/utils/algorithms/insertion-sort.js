@@ -2,7 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InsertionSort = void 0;
 class InsertionSort {
-    constructor() { }
+    count;
+    constructor() {
+        this.count = 0;
+    }
     run(array) {
         let n = array.length;
         for (let i = 1; i < n; i++) {
@@ -14,7 +17,7 @@ class InsertionSort {
             }
             array[j + 1] = current;
         }
-        return array;
+        return { array, count: this.count };
     }
 }
 exports.InsertionSort = InsertionSort;
