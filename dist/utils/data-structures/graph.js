@@ -7,12 +7,12 @@ class Graph {
     constructor() {
         this.AdjList = new Map();
     }
-    addVertex(v) {
-        this.AdjList.set(v, []);
+    addVertex(v, value) {
+        this.AdjList.set({ point: v, value }, []);
     }
-    addEdge(v, w) {
-        this.AdjList.get(v).push(w);
-        this.AdjList.get(w).push(v);
+    addEdge(value, w) {
+        this.AdjList.get({ point: value }).push(w);
+        this.AdjList.get({ point: w }).push(value);
     }
     removeVertex(v) {
         if (this.AdjList.has(v)) {
@@ -32,8 +32,8 @@ class Graph {
         return `${v} -> ${edges.join(', ')}`;
     }
     removeEdge(v, w) {
-        this.AdjList.get(v).splice(w, 1);
-        this.AdjList.get(w).splice(v, 1);
+        this.AdjList.get({ point: v }).splice(w, 1);
+        this.AdjList.get({ point: w }).splice(v, 1);
     }
     clearVertexes() {
         this.AdjList.clear();
@@ -46,7 +46,7 @@ class Graph {
         }
     }
     hasVertex(key) {
-        return this.AdjList.has(key) ? true : false;
+        return this.AdjList.has({ point: key }) ? true : false;
     }
     hasEdge(v, w) {
         const first = this.AdjList.get(v).find((val) => val === w);
@@ -86,6 +86,12 @@ class Graph {
             }
         }
     }
+    findShortPath(first, second) {
+        const costs = {};
+        const processed = [];
+        const neighbors = {};
+        return this.AdjList.keys();
+    }
     getSize() {
         return this.AdjList.size;
     }
@@ -107,4 +113,10 @@ class Graph {
     }
 }
 exports.Graph = Graph;
+const graph = new Graph();
+graph.addVertex('A', 120);
+graph.addVertex('B', 130);
+graph.addVertex('C', 50);
+console.log(graph.findShortPath('A', 'B'));
+console.log(graph.hasVertex('A'));
 //# sourceMappingURL=graph.js.map

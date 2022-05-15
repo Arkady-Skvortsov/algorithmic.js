@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PatienceSort = void 0;
-const big_o_notation_1 = require("../big-o-notation");
 class PatienceSort {
     count;
     constructor() {
@@ -58,7 +57,4 @@ class PatienceSort {
     }
 }
 exports.PatienceSort = PatienceSort;
-const time = new big_o_notation_1.BigONotation();
-console.log(time.checkComplexity(new PatienceSort().run([-2, -30, -100, 1, 100, 90, 80, 65, 55, 64, 20])
-    .count));
 //# sourceMappingURL=patience-sort.js.map

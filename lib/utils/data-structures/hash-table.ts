@@ -33,7 +33,7 @@ class HashTable {
       return this.hashTable[idx][key];
   }
 
-  public checkUnique(key: string) {
+  public checkUnique(key: string): string {
     return this.get(key) ? "It's not unique key" : "It's unique key";
   }
 
@@ -62,17 +62,17 @@ class HashTable {
     }
   }
 
-  public first() {
+  public first(): any {
     return Object.values(this.hashTable)[0];
   }
 
-  public clear() {
+  public clear(): void {
     let hash = Object.keys(this.hashTable);
 
     hash.splice(0, hash.length);
   }
 
-  public peek() {
+  public peek(): any {
     return Object.values(this.hashTable)[
       Object.keys(this.hashTable).length - 1
     ];

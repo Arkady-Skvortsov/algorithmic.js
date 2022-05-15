@@ -68,7 +68,7 @@ class LinkedList {
             if (head.element === element) {
                 return element;
             }
-            return -1;
+            return false;
         }
         if (head.element === element) {
             return element;
@@ -119,7 +119,7 @@ class LinkedList {
         return -1;
     }
     isEmpty() {
-        return this.size === 0;
+        return this.getSize() === 0;
     }
     clear() {
         this.head = null;

@@ -17,7 +17,7 @@ class PriorityQueue {
     this.items = [];
   }
 
-  public enqueue(element: any, priority: number) {
+  public enqueue(element: any, priority: number): void {
     let qElement = new QElement(element, priority);
     let contain = false;
 
@@ -42,15 +42,15 @@ class PriorityQueue {
     return { ...this.items[this.items.length - 1] };
   }
 
-  public dequeue() {
+  public dequeue(): void {
     this.items.shift();
   }
 
-  public clear() {
+  public clear(): void {
     this.items.length = 0;
   }
 
-  public has(element: any) {
+  public has(element: any): boolean {
     return this.items.find((item) => item === element) ? true : false;
   }
 
@@ -62,7 +62,7 @@ class PriorityQueue {
     return this.getSize() === 0;
   }
 
-  public print() {
+  public print(): string {
     let str = '';
 
     for (let i = 0; i < this.items.length; i++) {

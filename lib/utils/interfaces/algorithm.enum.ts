@@ -1,8 +1,8 @@
 type algorithmType =
-  | 'LINEAR-SORT'
-  | 'BINARY-SORT'
+  | 'LINEAR-SEARCH'
+  | 'BINARY-SEARCHs'
   | 'SELECTION-SORT'
-  | 'BUBBLE-SORT'
+  | 'BUBBLE-SORR'
   | 'QUICK-SORT'
   | 'MERGE-SORT'
   | 'SHELL-SORT'
@@ -15,12 +15,7 @@ type algorithmType =
   | 'INSERTION-SORT'
   | 'BUCKET-SORT'
   | 'CYCLE-SORT'
-  | 'DIJKSTRAS-ALGORITHM'
-  | 'RECURSIVE-TRAVERSAL-BINARY-TREE'
-  | 'DIFFIE-HELLMAN-KEY-EXCHANGE'
-  | 'FOURIER-TRANSFORM'
-  | 'HYPER-LOG-LOG'
-  | 'HASH-FUNCTION';
+  | 'DIJKSTRAS-ALGORITHM';
 
 interface algorithmPayload {
   array: any[];

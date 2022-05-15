@@ -31,15 +31,16 @@ I noticed that we (JS) do not have a normal LIBRARY for using algorithms, for ex
   npm i algroithm.js
 ```
 
-```ts
-import { Algorithm, DataStructure, BigONotation } from 'algorithm.js';
+```js
+const { Algorithm, DataStructure, BigONotation } = require('algorithm.js');
 
 const linearSearch = new Algorithm().create('LINEAR-SEARCH');
 const stack = new DataStructure().create('STACK');
-const linearTime = new BigONotation().create('LINEAR');
+const linearTime = new BigONotation().create('LINEAR-TIME');
 
-linearSearch.run([1, 2, 4, 7, 10, 23, 26, 30, 45]);
-linearTime.check(linearSearch.run()); // N(O) = 8
+const ls = linearSearch.run([1, 2, 4, 7, 10, 23, 26, 30, 45]);
+
+linearTime.check(ls.count); // N(O) = 8
 
 stack.add(10);
 stack.add(200);

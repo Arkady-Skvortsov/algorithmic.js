@@ -18,7 +18,7 @@ class LinkedList {
     this.size = 0;
   }
 
-  public add(element: any) {
+  public add(element: any): void {
     let node = new Nodes(element);
     let current;
 
@@ -34,7 +34,7 @@ class LinkedList {
     }
   }
 
-  public peek() {
+  public peek(): any {
     let curr = this.head;
 
     while (curr.next !== null) {
@@ -46,7 +46,7 @@ class LinkedList {
     if (curr === null) return curr.element;
   }
 
-  public has(element: any) {
+  public has(element: any): boolean {
     let curr = this.head;
 
     if (curr.element !== element) {
@@ -62,7 +62,7 @@ class LinkedList {
     }
   }
 
-  public first() {
+  public first(): any {
     let idx = 0;
     let curr = this.head;
 
@@ -73,7 +73,7 @@ class LinkedList {
     return curr.element;
   }
 
-  public find(element: any) {
+  public find(element: any): any | boolean {
     let head = this.head;
 
     while (head.element !== element) {
@@ -83,7 +83,7 @@ class LinkedList {
         return element;
       }
 
-      return -1;
+      return false;
     }
 
     if (head.element === element) {
@@ -91,7 +91,7 @@ class LinkedList {
     }
   }
 
-  public insertAfter(element: any, idx: number) {
+  public insertAfter(element: any, idx: number): any {
     if (idx < 0 || idx > this.size) return 'Please enter a valid index';
     else {
       let node = new Nodes(element);
@@ -143,15 +143,15 @@ class LinkedList {
     return -1;
   }
 
-  public isEmpty() {
-    return this.size === 0;
+  public isEmpty(): boolean {
+    return this.getSize() === 0;
   }
 
-  public clear() {
+  public clear(): void {
     this.head = null;
   }
 
-  public getSize() {
+  public getSize(): number {
     let count = 0;
     let node = this.head;
 
@@ -163,7 +163,7 @@ class LinkedList {
     return count;
   }
 
-  public print() {
+  public print(): string {
     let curr = this.head;
     let str = '';
 

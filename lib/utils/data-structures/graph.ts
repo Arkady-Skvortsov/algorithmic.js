@@ -7,13 +7,13 @@ class Graph {
     this.AdjList = new Map();
   }
 
-  public addVertex(v: string): void {
-    this.AdjList.set(v, []);
+  public addVertex(v: string, value: number): void {
+    this.AdjList.set({ point: v, value }, []);
   }
 
-  public addEdge(v: string, w: string): void {
-    this.AdjList.get(v).push(w);
-    this.AdjList.get(w).push(v);
+  public addEdge(value: string, w: string): void {
+    this.AdjList.get({ point: value }).push(w);
+    this.AdjList.get({ point: w }).push(value);
   }
 
   public removeVertex(v: string) {
@@ -41,8 +41,8 @@ class Graph {
   }
 
   public removeEdge(v: string, w: string): void {
-    this.AdjList.get(v).splice(w, 1);
-    this.AdjList.get(w).splice(v, 1);
+    this.AdjList.get({ point: v }).splice(w, 1);
+    this.AdjList.get({ point: w }).splice(v, 1);
   }
 
   public clearVertexes(): void {
@@ -60,7 +60,7 @@ class Graph {
   }
 
   public hasVertex(key: string): boolean {
-    return this.AdjList.has(key) ? true : false;
+    return this.AdjList.has({ point: key }) ? true : false;
   }
 
   public hasEdge(v: string, w: string): boolean {
@@ -117,11 +117,19 @@ class Graph {
     }
   }
 
+  public findShortPath(first: string, second: string) {
+    const costs = {};
+    const processed = [];
+    const neighbors = {};
+
+    return this.AdjList.keys();
+  }
+
   public getSize(): number {
     return this.AdjList.size;
   }
 
-  public clear() {
+  public clear(): void {
     this.AdjList.clear();
   }
 
@@ -129,7 +137,7 @@ class Graph {
     return this.getSize() === 0;
   }
 
-  public print(): void {
+  public print(): any | undefined {
     const get_keys = this.AdjList.keys();
 
     for (let i of get_keys) {
@@ -142,5 +150,14 @@ class Graph {
     }
   }
 }
+
+const graph = new Graph();
+
+graph.addVertex('A', 120);
+graph.addVertex('B', 130);
+graph.addVertex('C', 50);
+
+console.log(graph.findShortPath('A', 'B'));
+console.log(graph.hasVertex('A'));
 
 export { Graph };

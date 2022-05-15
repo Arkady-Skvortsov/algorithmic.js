@@ -19,7 +19,7 @@ class BinaryTree {
     this.size = 0;
   }
 
-  public add(element: any) {
+  public add(element: any): any {
     const newNode = new TreeNode(element);
 
     if (this.root === null) {
@@ -51,11 +51,11 @@ class BinaryTree {
     this.size++;
   }
 
-  public remove(element: any) {
+  public remove(element: any): void {
     this.root = this.removeTreeNode(this.root, element);
   }
 
-  private removeTreeNode(current: any, element: any) {
+  private removeTreeNode(current: any, element: any): any {
     if (current === null) return current;
 
     if (element === current.element) {
@@ -87,13 +87,13 @@ class BinaryTree {
     return element;
   }
 
-  public removeSmallestTreeNode() {
+  public removeSmallestTreeNode(): void {
     const smallestTree = Math.min(...this.breadthFirstSearch());
 
     this.root = this.removeTreeNode(this.root, smallestTree);
   }
 
-  public removeBiggestTreeNode() {
+  public removeBiggestTreeNode(): void {
     const biggestTree = Math.max(...this.breadthFirstSearch());
 
     this.root = this.removeTreeNode(this.root, biggestTree);
@@ -121,7 +121,7 @@ class BinaryTree {
     return { ...current };
   }
 
-  private findMaxHeight(root = this.root): any {
+  private findMaxHeight(root = this.root): number {
     if (root === null) return -1;
 
     let left = this.findMaxHeight(root.left);
@@ -130,7 +130,7 @@ class BinaryTree {
     return left > right ? left + 1 : right + 1;
   }
 
-  private findMinHeight(root = this.root): any {
+  private findMinHeight(root = this.root): number {
     if (root === null) return -1;
 
     let left = this.findMinHeight(root.left);
@@ -139,7 +139,7 @@ class BinaryTree {
     return left < right ? left + 1 : right + 1;
   }
 
-  public findMinNode() {
+  public findMinNode(): any {
     let root = this.root;
 
     while (root.left !== null) {
@@ -149,7 +149,7 @@ class BinaryTree {
     return root.element;
   }
 
-  public findMaxNode() {
+  public findMaxNode(): any {
     let root = this.root;
 
     while (root.right !== null) {
@@ -163,13 +163,13 @@ class BinaryTree {
     return this.findMinHeight() >= this.findMaxHeight() - 1;
   }
 
-  public setRootToElement(element: any) {
+  public setRootToElement(element: any): void {
     let root = this.find(element);
 
     this.root = root;
   }
 
-  public clear() {
+  public clear(): void {
     this.root = null;
   }
 

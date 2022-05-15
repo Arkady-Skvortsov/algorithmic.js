@@ -2,7 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShellSort = void 0;
 class ShellSort {
-    constructor() { }
+    count;
+    constructor() {
+        this.count = 0;
+    }
     run(arr) {
         let n = arr.length;
         for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
@@ -15,7 +18,7 @@ class ShellSort {
                 arr[j] = temp;
             }
         }
-        return arr;
+        return { array: arr, count: this.count };
     }
 }
 exports.ShellSort = ShellSort;

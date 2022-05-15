@@ -4,7 +4,6 @@ type dataStructureType =
   | 'QUEUE'
   | 'HEAP'
   | 'LINKED-LIST'
-  | 'TREE'
   | 'HASH-TABLE'
   | 'BLOOM-FILTER'
   | 'PRIORITY-QUEUE'
