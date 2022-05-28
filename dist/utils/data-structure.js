@@ -4,13 +4,12 @@ exports.DataStructure = void 0;
 const stack_1 = require("./data-structures/stack");
 const queue_1 = require("./data-structures/queue");
 class DataStructure {
-    constructor() { }
     create(type) {
-        switch (type) {
-            case 'STACK':
-                return new stack_1.Stack();
-            case 'QUEUE':
-                return new queue_1.Queue();
+        if (type === 'STACK') {
+            return new stack_1.Stack();
+        }
+        else {
+            return new queue_1.Queue();
         }
     }
 }

@@ -7,12 +7,12 @@ class Graph {
     constructor() {
         this.AdjList = new Map();
     }
-    addVertex(v, value) {
-        this.AdjList.set({ point: v, value }, []);
+    addVertex(v) {
+        this.AdjList.set(v, []);
     }
-    addEdge(value, w) {
-        this.AdjList.get({ point: value }).push(w);
-        this.AdjList.get({ point: w }).push(value);
+    addEdge(first, second) {
+        this.AdjList.get(first).push(second);
+        this.AdjList.get(second).push(first);
     }
     removeVertex(v) {
         if (this.AdjList.has(v)) {
@@ -31,9 +31,9 @@ class Graph {
         const edges = this.AdjList.get(v);
         return `${v} -> ${edges.join(', ')}`;
     }
-    removeEdge(v, w) {
-        this.AdjList.get({ point: v }).splice(w, 1);
-        this.AdjList.get({ point: w }).splice(v, 1);
+    removeEdge(first, second) {
+        this.AdjList.get(second).splice(second, 1);
+        this.AdjList.get(first).splice(first, 1);
     }
     clearVertexes() {
         this.AdjList.clear();
@@ -45,8 +45,8 @@ class Graph {
             values.splice(0, values.length);
         }
     }
-    hasVertex(key) {
-        return this.AdjList.has({ point: key }) ? true : false;
+    hasVertex(vertex) {
+        return this.AdjList.has(vertex) ? true : false;
     }
     hasEdge(v, w) {
         const first = this.AdjList.get(v).find((val) => val === w);
@@ -75,7 +75,6 @@ class Graph {
         q.enqueue(startingNode);
         while (!q.isEmpty()) {
             let getQueueElement = q.dequeue();
-            console.log(getQueueElement);
             let get_List = this.AdjList.get(getQueueElement);
             for (let i in get_List) {
                 let neigh = get_List[i];
@@ -84,13 +83,8 @@ class Graph {
                     q.enqueue(neigh);
                 }
             }
+            console.log(getQueueElement);
         }
-    }
-    findShortPath(first, second) {
-        const costs = {};
-        const processed = [];
-        const neighbors = {};
-        return this.AdjList.keys();
     }
     getSize() {
         return this.AdjList.size;
@@ -113,10 +107,4 @@ class Graph {
     }
 }
 exports.Graph = Graph;
-const graph = new Graph();
-graph.addVertex('A', 120);
-graph.addVertex('B', 130);
-graph.addVertex('C', 50);
-console.log(graph.findShortPath('A', 'B'));
-console.log(graph.hasVertex('A'));
 //# sourceMappingURL=graph.js.map

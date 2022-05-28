@@ -147,6 +147,36 @@ class BinaryTree {
     clear() {
         this.root = null;
     }
+    peek(side) {
+        let current = this.root;
+        if (side === 'left') {
+            while (current.left !== null) {
+                current = current.left;
+                if (current.left === null)
+                    return current.element;
+            }
+        }
+        while (current.right !== null) {
+            current = current.right;
+            if (current.right === null)
+                return current.element;
+        }
+    }
+    next(side) {
+        let current = this.root;
+        if (side === 'left') {
+            if (current.left !== null) {
+                current = current.left;
+                this.root = current;
+                return this;
+            }
+        }
+        if (current.right !== null) {
+            current = current.right;
+            this.root = current;
+            return this;
+        }
+    }
     has(element) {
         return this.find(element) ? true : false;
     }

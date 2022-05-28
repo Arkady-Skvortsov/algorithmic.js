@@ -1,7 +1,6 @@
 class Nodes {
   public element: any;
   public next: any;
-  public prev: any;
 
   constructor(element: any) {
     this.element = element;
@@ -32,6 +31,8 @@ class LinkedList {
 
       current.next = node;
     }
+
+    this.size++;
   }
 
   public peek(): any {
@@ -46,20 +47,20 @@ class LinkedList {
     if (curr === null) return curr.element;
   }
 
-  public has(element: any): boolean {
+  public next() {
     let curr = this.head;
 
-    if (curr.element !== element) {
+    if (curr.next !== null) {
       curr = curr.next;
 
-      if (curr.next.element === element) {
-        return true;
-      }
-
-      return false;
-    } else {
-      return true;
+      this.head = curr;
     }
+
+    return this;
+  }
+
+  public has(element: any): boolean {
+    return this.find(element) ? true : false;
   }
 
   public first(): any {
@@ -91,7 +92,7 @@ class LinkedList {
     }
   }
 
-  public insertAfter(element: any, idx: number): any {
+  public append(element: any, idx: number): any {
     if (idx < 0 || idx > this.size) return 'Please enter a valid index';
     else {
       let node = new Nodes(element);

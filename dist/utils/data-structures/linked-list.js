@@ -4,7 +4,6 @@ exports.LinkedList = void 0;
 class Nodes {
     element;
     next;
-    prev;
     constructor(element) {
         this.element = element;
         this.next = null;
@@ -29,6 +28,7 @@ class LinkedList {
             }
             current.next = node;
         }
+        this.size++;
     }
     peek() {
         let curr = this.head;
@@ -40,18 +40,16 @@ class LinkedList {
         if (curr === null)
             return curr.element;
     }
-    has(element) {
+    next() {
         let curr = this.head;
-        if (curr.element !== element) {
+        if (curr.next !== null) {
             curr = curr.next;
-            if (curr.next.element === element) {
-                return true;
-            }
-            return false;
+            this.head = curr;
         }
-        else {
-            return true;
-        }
+        return this;
+    }
+    has(element) {
+        return this.find(element) ? true : false;
     }
     first() {
         let idx = 0;
@@ -74,7 +72,7 @@ class LinkedList {
             return element;
         }
     }
-    insertAfter(element, idx) {
+    append(element, idx) {
         if (idx < 0 || idx > this.size)
             return 'Please enter a valid index';
         else {

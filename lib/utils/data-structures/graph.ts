@@ -7,13 +7,13 @@ class Graph {
     this.AdjList = new Map();
   }
 
-  public addVertex(v: string, value: number): void {
-    this.AdjList.set({ point: v, value }, []);
+  public addVertex(v: string): void {
+    this.AdjList.set(v, []);
   }
 
-  public addEdge(value: string, w: string): void {
-    this.AdjList.get({ point: value }).push(w);
-    this.AdjList.get({ point: w }).push(value);
+  public addEdge(first: string, second: string): void {
+    this.AdjList.get(first).push(second);
+    this.AdjList.get(second).push(first);
   }
 
   public removeVertex(v: string) {
@@ -40,9 +40,9 @@ class Graph {
     return `${v} -> ${edges.join(', ')}`;
   }
 
-  public removeEdge(v: string, w: string): void {
-    this.AdjList.get({ point: v }).splice(w, 1);
-    this.AdjList.get({ point: w }).splice(v, 1);
+  public removeEdge(first: string, second: string): void {
+    this.AdjList.get(second).splice(second, 1);
+    this.AdjList.get(first).splice(first, 1);
   }
 
   public clearVertexes(): void {
@@ -59,8 +59,8 @@ class Graph {
     }
   }
 
-  public hasVertex(key: string): boolean {
-    return this.AdjList.has({ point: key }) ? true : false;
+  public hasVertex(vertex: string): boolean {
+    return this.AdjList.has(vertex) ? true : false;
   }
 
   public hasEdge(v: string, w: string): boolean {
@@ -102,8 +102,6 @@ class Graph {
     while (!q.isEmpty()) {
       let getQueueElement = q.dequeue();
 
-      console.log(getQueueElement);
-
       let get_List = this.AdjList.get(getQueueElement);
 
       for (let i in get_List) {
@@ -114,15 +112,9 @@ class Graph {
           q.enqueue(neigh);
         }
       }
+
+      console.log(getQueueElement);
     }
-  }
-
-  public findShortPath(first: string, second: string) {
-    const costs = {};
-    const processed = [];
-    const neighbors = {};
-
-    return this.AdjList.keys();
   }
 
   public getSize(): number {
@@ -150,14 +142,5 @@ class Graph {
     }
   }
 }
-
-const graph = new Graph();
-
-graph.addVertex('A', 120);
-graph.addVertex('B', 130);
-graph.addVertex('C', 50);
-
-console.log(graph.findShortPath('A', 'B'));
-console.log(graph.hasVertex('A'));
 
 export { Graph };

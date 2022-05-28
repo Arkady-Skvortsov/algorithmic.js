@@ -1,3 +1,5 @@
+import { side } from '../interfaces/data-structure.enum';
+
 class TreeNode {
   public element: any;
   public left: null;
@@ -173,6 +175,46 @@ class BinaryTree {
     this.root = null;
   }
 
+  public peek(side: side) {
+    let current = this.root;
+
+    if (side === 'left') {
+      while (current.left !== null) {
+        current = current.left;
+
+        if (current.left === null) return current.element;
+      }
+    }
+
+    while (current.right !== null) {
+      current = current.right;
+
+      if (current.right === null) return current.element;
+    }
+  }
+
+  public next(side: side) {
+    let current = this.root;
+
+    if (side === 'left') {
+      if (current.left !== null) {
+        current = current.left;
+
+        this.root = current;
+
+        return this;
+      }
+    }
+
+    if (current.right !== null) {
+      current = current.right;
+
+      this.root = current;
+
+      return this;
+    }
+  }
+
   public has(element: any): boolean {
     return this.find(element) ? true : false;
   }
@@ -269,7 +311,7 @@ class BinaryTree {
     return this.getSize() === 0;
   }
 
-  public print() {
+  public print(): Object {
     return { ...this.root };
   }
 }
