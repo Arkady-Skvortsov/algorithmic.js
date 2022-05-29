@@ -117,6 +117,9 @@ class Heap {
   }
 
   public turnIn(options: heapType) {
+    if (options === 'max') {
+    }
+
     return this;
   }
 
@@ -136,5 +139,7 @@ class Heap {
     return { ...this.root };
   }
 }
+
+const heap = new Heap();
 
 export { Heap };

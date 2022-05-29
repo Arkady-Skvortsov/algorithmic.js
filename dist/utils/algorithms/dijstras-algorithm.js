@@ -1,10 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DijstrasAlgorithm = void 0;
+exports.dijsrasAlgorithm = void 0;
 class DijstrasAlgorithm {
-    constructor() { }
-    run(array) { }
+    run(graph, start, end) {
+        const costs = {};
+        const processed = [];
+        const neighbors = {};
+        Object.keys(graph).forEach(() => { });
+    }
 }
-exports.DijstrasAlgorithm = DijstrasAlgorithm;
-const dijstras = new DijstrasAlgorithm();
+const dijsrasAlgorithm = new DijstrasAlgorithm();
+exports.dijsrasAlgorithm = dijsrasAlgorithm;
+console.log(dijsrasAlgorithm);
 //# sourceMappingURL=dijstras-algorithm.js.map

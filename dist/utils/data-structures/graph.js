@@ -11,8 +11,10 @@ class Graph {
         this.AdjList.set(v, []);
     }
     addEdge(first, second) {
-        this.AdjList.get(first).push(second);
-        this.AdjList.get(second).push(first);
+        !this.hasEdge(first, second)
+            ? (this.AdjList.get(first).push(second),
+                this.AdjList.get(second).push(first))
+            : console.log('You already have that edge');
     }
     removeVertex(v) {
         if (this.AdjList.has(v)) {
@@ -27,9 +29,16 @@ class Graph {
         }
         return false;
     }
+    first() {
+        const [first] = this.AdjList.keys();
+        return first;
+    }
+    peek() {
+        return [...this.AdjList][this.AdjList.size - 1][0];
+    }
     getEdge(v) {
         const edges = this.AdjList.get(v);
-        return `${v} -> ${edges.join(', ')}`;
+        return { vertex: v, edges: edges.join(', ') };
     }
     removeEdge(first, second) {
         this.AdjList.get(second).splice(second, 1);
@@ -37,6 +46,16 @@ class Graph {
     }
     clearVertexes() {
         this.AdjList.clear();
+    }
+    next(vertex) {
+        let edge = this.getEdge(vertex);
+        let count = -1;
+        const edges = edge.edges.split(', ');
+        if (count <= edges.length) {
+            count++;
+            edge = this.getEdge(edges[count]);
+        }
+        return this;
     }
     clearEdges() {
         let keys = this.AdjList.keys();
@@ -86,6 +105,7 @@ class Graph {
             console.log(getQueueElement);
         }
     }
+    findShortPath(first, second) { }
     getSize() {
         return this.AdjList.size;
     }

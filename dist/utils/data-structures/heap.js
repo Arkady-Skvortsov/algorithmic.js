@@ -45,7 +45,46 @@ class Heap {
             this.size++;
         }
     }
-    remove(element) { }
+    getRootOfHeap() {
+        return this.root.element;
+    }
+    remove(element) {
+        this.root = this.removeTreeNode(this.root, element);
+    }
+    removeTreeNode(current, element) {
+        if (current === null)
+            return current;
+        if (element === current.element) {
+            if (current.left === null && current.right === null) {
+                return null;
+            }
+            else if (current.left === null) {
+                return current.right;
+            }
+            else if (current.right === null) {
+                return current.left;
+            }
+            else {
+                const tempNode = this.findSmallestTreeNode(current.right);
+                current.element = tempNode.element;
+                current.right = this.removeTreeNode(current.right, tempNode.element);
+                return current;
+            }
+        }
+        else if (element < current.element) {
+            current.left = this.removeTreeNode(current.left, element);
+            return current;
+        }
+        else {
+            current.right = this.removeTreeNode(current.right, element);
+            return current;
+        }
+    }
+    findSmallestTreeNode(element) {
+        while (element.left !== null)
+            element = element.left;
+        return element;
+    }
     find(element) {
         if (this.root === null)
             return false;
@@ -66,6 +105,8 @@ class Heap {
         this.root = null;
     }
     turnIn(options) {
+        if (options === 'max') {
+        }
         return this;
     }
     has(element) {
@@ -83,13 +124,4 @@ class Heap {
 }
 exports.Heap = Heap;
 const heap = new Heap();
-heap.add(100);
-heap.add(120);
-heap.add(300);
-heap.add(1200);
-heap.add(4000);
-heap.add(2000);
-heap.add(1000);
-heap.add(53);
-console.log(heap.getSize());
 //# sourceMappingURL=heap.js.map

@@ -1,3 +1,5 @@
+import { algorithmPayload } from '../interfaces/algorithm.enum';
+
 class BinarySearch {
   private count: number;
 
@@ -5,7 +7,7 @@ class BinarySearch {
     this.count = 0;
   }
 
-  public run(array: any[], item: any) {
+  public run(array: any[], item: any): algorithmPayload {
     let start = 0;
     let end = array.length;
     let middle;
@@ -24,7 +26,7 @@ class BinarySearch {
         : (start = middle + 1);
     }
 
-    return { index: position, time: this.count };
+    return { array: position, count: this.count };
   }
 }
 

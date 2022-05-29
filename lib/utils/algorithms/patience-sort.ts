@@ -1,4 +1,3 @@
-import { BigONotation } from '../big-o-notation';
 import { algorithmPayload } from '../interfaces/algorithm.enum';
 
 class PatienceSort {

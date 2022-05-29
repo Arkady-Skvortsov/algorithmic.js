@@ -1,3 +1,4 @@
+import { graph } from '../interfaces/data-structure.enum';
 import { Queue } from './queue';
 
 class Graph {
@@ -12,8 +13,10 @@ class Graph {
   }
 
   public addEdge(first: string, second: string): void {
-    this.AdjList.get(first).push(second);
-    this.AdjList.get(second).push(first);
+    !this.hasEdge(first, second)
+      ? (this.AdjList.get(first).push(second),
+        this.AdjList.get(second).push(first))
+      : console.log('You already have that edge');
   }
 
   public removeVertex(v: string) {
@@ -34,10 +37,20 @@ class Graph {
     return false;
   }
 
-  public getEdge(v: string): string {
+  public first(): any {
+    const [first] = this.AdjList.keys();
+
+    return first;
+  }
+
+  public peek() {
+    return [...this.AdjList][this.AdjList.size - 1][0];
+  }
+
+  public getEdge(v: string): any {
     const edges = this.AdjList.get(v);
 
-    return `${v} -> ${edges.join(', ')}`;
+    return { vertex: v, edges: edges.join(', ') };
   }
 
   public removeEdge(first: string, second: string): void {
@@ -47,6 +60,20 @@ class Graph {
 
   public clearVertexes(): void {
     this.AdjList.clear();
+  }
+
+  public next(vertex: string) {
+    let edge = this.getEdge(vertex);
+    let count = -1;
+    const edges = edge.edges.split(', ');
+
+    if (count <= edges.length) {
+      count++;
+
+      edge = this.getEdge(edges[count]);
+    }
+
+    return this;
   }
 
   public clearEdges(): void {
@@ -116,6 +143,8 @@ class Graph {
       console.log(getQueueElement);
     }
   }
+
+  public findShortPath(first: string, second: string) {}
 
   public getSize(): number {
     return this.AdjList.size;

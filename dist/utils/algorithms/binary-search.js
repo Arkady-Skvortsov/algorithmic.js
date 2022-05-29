@@ -21,7 +21,7 @@ class BinarySearch {
                     ? (end = middle - 1)
                     : (start = middle + 1);
         }
-        return { index: position, time: this.count };
+        return { array: position, count: this.count };
     }
 }
 exports.BinarySearch = BinarySearch;

@@ -1,4 +1,6 @@
-class Stack {
+import { IdataStructure } from '../interfaces/data-structure.enum';
+
+class Stack implements IdataStructure {
   private readonly stack: any[];
 
   constructor() {

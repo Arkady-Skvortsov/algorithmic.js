@@ -18,13 +18,12 @@ type algorithmType =
   | 'DIJKSTRAS-ALGORITHM';
 
 interface algorithmPayload {
-  array: any[];
+  array: any[] | number;
   count: number;
 }
 
 abstract class IAlgorithm {
-  abstract getSize(): number;
-  abstract print(): string;
+  abstract run<T extends number>(array: T[]): algorithmPayload;
 }
 
 export { algorithmType, algorithmPayload };

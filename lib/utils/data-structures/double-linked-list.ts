@@ -1,3 +1,5 @@
+import { IdataStructure } from '../interfaces/data-structure.enum';
+
 class Nodes {
   public element: any;
   public next: any;
@@ -10,7 +12,7 @@ class Nodes {
   }
 }
 
-class DoubleLinkedList {
+class DoubleLinkedList implements IdataStructure {
   private head: any;
   private tail: any;
   private size: number;

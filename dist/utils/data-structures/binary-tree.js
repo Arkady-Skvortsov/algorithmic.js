@@ -147,6 +147,10 @@ class BinaryTree {
     clear() {
         this.root = null;
     }
+    clearByNode(element) {
+        let node = this.find(element);
+        node = null;
+    }
     peek(side) {
         let current = this.root;
         if (side === 'left') {

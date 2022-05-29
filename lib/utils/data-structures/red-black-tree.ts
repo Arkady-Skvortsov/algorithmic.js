@@ -1,19 +1,26 @@
 import { side } from '../interfaces/data-structure.enum';
 
-class TreeNode {
-  public element: any;
-  public left: null;
-  public right: null;
+const RED: boolean = true;
+const BLACK: boolean = false;
 
-  constructor(element: any) {
+class Nodes {
+  public key: any;
+  public element: any;
+  public left: any;
+  public right: any;
+  public color: boolean;
+
+  constructor(key: any, element: any) {
+    this.key = key;
     this.element = element;
     this.left = null;
     this.right = null;
+    this.color = BLACK;
   }
 }
 
-class BinaryTree {
-  private root: null | any;
+class RedBlackTree {
+  private root: any;
   private size: number;
 
   constructor() {
@@ -21,36 +28,47 @@ class BinaryTree {
     this.size = 0;
   }
 
-  public add(element: any): any {
-    const newNode = new TreeNode(element);
+  public getRootOfTree(): any {
+    return this.root.element;
+  }
 
-    if (this.root === null) {
-      this.root = newNode;
-      return this;
+  public isRed(node: any): boolean {
+    return !node ? BLACK : node.color;
+  }
+
+  public add(key: any, element: any): void {
+    this.root = this.addRoot(this.root, key, element);
+    this.root.color = BLACK;
+  }
+
+  private addRoot(node: any, key: any, element: any): any {
+    if (!node) {
+      this.size++;
+      return new Nodes(key, element);
     }
-
-    let current: any = this.root;
-
-    while (current) {
-      if (element === current.element) return;
-
-      if (element < current.element) {
-        if (current.left === null) {
-          current.left = newNode;
-          return this;
-        }
-
-        current = current.left;
-      } else {
-        if (current.right === null) {
-          current.right = newNode;
-          return this;
-        }
-
-        current = current.right;
-      }
+    if (key < node.key) {
+      node.left = this.addRoot(node.left, key, element);
+    } else if (key > node.key) {
+      node.right = this.addRoot(node.right, key, element);
+    } else {
+      node.value = element;
     }
-    this.size++;
+    if (this.isRed(node.right) && !this.isRed(node.left)) {
+      node = this.leftRotate(node);
+    }
+    if (this.isRed(node.left) && this.isRed(node.left.left)) {
+      node = this.rightRotate(node);
+    }
+    if (this.isRed(node.left) && this.isRed(node.right)) {
+      this.flipColors(node);
+    }
+    return node;
+  }
+
+  public summOfTree(): number {
+    let arr = this.breadthFirstSearch();
+
+    return arr.reduce((first, second) => first + second, 0);
   }
 
   public remove(element: any): void {
@@ -89,6 +107,24 @@ class BinaryTree {
     return element;
   }
 
+  public peek(side: side): any {
+    let current = this.root;
+
+    if (side === 'left') {
+      while (current.left !== null) {
+        current = current.left;
+
+        if (current.left === null) return current.element;
+      }
+    }
+
+    while (current.right !== null) {
+      current = current.right;
+
+      if (current.right === null) return current.element;
+    }
+  }
+
   public removeSmallestTreeNode(): void {
     const smallestTree = Math.min(...this.breadthFirstSearch());
 
@@ -101,26 +137,54 @@ class BinaryTree {
     this.root = this.removeTreeNode(this.root, biggestTree);
   }
 
-  public getRootOfTree(): any {
-    return this.root.element;
-  }
-
-  public find(element: any): any {
-    if (this.root === null) return false;
-
+  public breadthFirstSearch() {
+    let visited = [];
+    let queue = [];
     let current = this.root;
 
-    while (current.element !== element) {
-      if (element < current.element) {
-        current = current.left;
-      } else {
-        current = current.right;
-      }
+    queue.push(current);
 
-      if (current === null) return null;
+    while (queue.length) {
+      current = queue.shift();
+      visited.push(current.element);
+
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
     }
 
-    return { ...current };
+    return visited;
+  }
+
+  public leftRotate(node: any): any {
+    let tmp = node.right;
+
+    node.right = tmp.left;
+    tmp.left = node;
+    tmp.color = node.color;
+    node.color = RED;
+
+    return tmp;
+  }
+
+  public rightRotate(node: any): any {
+    let tmp = node.left;
+
+    node.left = tmp.right;
+    tmp.right = node;
+    tmp.color = node.color;
+    node.color = RED;
+
+    return tmp;
+  }
+
+  public flipColors(node: any): void {
+    node.color = RED;
+    node.left.color = BLACK;
+    node.right.color = BLACK;
+  }
+
+  public has(key: any): boolean {
+    return this.find(key) ? true : false;
   }
 
   private findMaxHeight(root = this.root): number {
@@ -171,97 +235,22 @@ class BinaryTree {
     this.root = root;
   }
 
-  public clear(): void {
-    this.root = null;
-  }
+  public find(element: any): any {
+    if (this.root === null) return false;
 
-  public clearByNode(element: any): void {
-    let node = this.find(element);
-
-    node = null;
-  }
-
-  public peek(side: side): any {
     let current = this.root;
 
-    if (side === 'left') {
-      while (current.left !== null) {
+    while (current.element !== element) {
+      if (element < current.element) {
         current = current.left;
-
-        if (current.left === null) return current.element;
+      } else {
+        current = current.right;
       }
+
+      if (current === null) return null;
     }
 
-    while (current.right !== null) {
-      current = current.right;
-
-      if (current.right === null) return current.element;
-    }
-  }
-
-  public next(side: side): any {
-    let current = this.root;
-
-    if (side === 'left') {
-      if (current.left !== null) {
-        current = current.left;
-
-        this.root = current;
-
-        return this;
-      }
-    }
-
-    if (current.right !== null) {
-      current = current.right;
-
-      this.root = current;
-
-      return this;
-    }
-  }
-
-  public has(element: any): boolean {
-    return this.find(element) ? true : false;
-  }
-
-  public invertTree(root = this.root): any {
-    if (root === null) return;
-
-    let temp;
-
-    this.invertTree(root.left);
-    this.invertTree(root.right);
-
-    temp = root.left;
-    root.left = root.right;
-    root.right = temp;
-
-    return root;
-  }
-
-  public summOfTree(): number {
-    let arr = this.breadthFirstSearch();
-
-    return arr.reduce((first, second) => first + second, 0);
-  }
-
-  public breadthFirstSearch(): any[] {
-    let visited = [];
-    let queue = [];
-    let current = this.root;
-
-    queue.push(current);
-
-    while (queue.length) {
-      current = queue.shift();
-      visited.push(current.element);
-
-      if (current.left) queue.push(current.left);
-      if (current.right) queue.push(current.right);
-    }
-
-    return visited;
+    return { ...current };
   }
 
   public preOrder(): any[] {
@@ -309,12 +298,16 @@ class BinaryTree {
     return visited;
   }
 
-  public getSize(): number {
-    return this.size;
+  public clear(): void {
+    this.root = null;
   }
 
   public isEmpty(): boolean {
     return this.getSize() === 0;
+  }
+
+  public getSize(): number {
+    return this.size;
   }
 
   public print(): Object {
@@ -322,4 +315,4 @@ class BinaryTree {
   }
 }
 
-export { BinaryTree };
+export { RedBlackTree };

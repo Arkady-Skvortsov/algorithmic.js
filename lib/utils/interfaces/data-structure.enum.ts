@@ -13,6 +13,10 @@ type dataStructureType =
   | 'CIRCULAR-BUFFER';
 type side = 'left' | 'right';
 type heapType = 'min' | 'max';
+type rbtType = 'red' | 'black';
+
+const BLACK = false;
+const RED = true;
 
 interface priorityQueue {
   element: any;
@@ -26,7 +30,12 @@ interface graph {
 
 abstract class IdataStructure {
   public abstract clear(): void;
-  public abstract print(): string;
+  public abstract has(element: any): boolean;
+  public abstract getSize(): number;
+  public abstract first(): any;
+  public abstract peek(): any;
+  public abstract isEmpty(): boolean;
+  public abstract print(): any;
 }
 
 export {
@@ -35,5 +44,8 @@ export {
   graph,
   IdataStructure,
   side,
+  rbtType,
   heapType,
+  RED,
+  BLACK,
 };
