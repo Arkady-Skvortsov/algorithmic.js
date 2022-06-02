@@ -15,8 +15,8 @@ type side = 'left' | 'right';
 type heapType = 'min' | 'max';
 type rbtType = 'red' | 'black';
 
-const BLACK = false;
-const RED = true;
+const BLACK: boolean = false;
+const RED: boolean = true;
 
 interface priorityQueue {
   element: any;
@@ -38,6 +38,40 @@ abstract class IdataStructure {
   public abstract print(): any;
 }
 
+class BinaryNode {
+  public element: any;
+  public left: null;
+  public right: null;
+
+  constructor(element: any) {
+    this.element = element;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class RedBlackNode extends BinaryNode {
+    public key: any;
+    public color: boolean;
+  
+    constructor(key: any, element: any) {
+      super(element);
+
+      this.key = key;
+      this.color = BLACK;
+    }
+}
+
+class SplayNode extends BinaryNode {
+  public key: any;
+
+  constructor(key: any, element: any) {
+    super(element);
+
+    this.key = key;
+  }
+}
+
 export {
   dataStructureType,
   priorityQueue,
@@ -46,6 +80,9 @@ export {
   side,
   rbtType,
   heapType,
+  BinaryNode,
+  RedBlackNode,
+  SplayNode,
   RED,
   BLACK,
 };

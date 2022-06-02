@@ -1,16 +1,4 @@
-import { side } from '../interfaces/data-structure.enum';
-
-class TreeNode {
-  public element: any;
-  public left: null;
-  public right: null;
-
-  constructor(element: any) {
-    this.element = element;
-    this.left = null;
-    this.right = null;
-  }
-}
+import { side, BinaryNode } from '../interfaces/data-structure.enum';
 
 class BinaryTree {
   private root: null | any;
@@ -22,7 +10,7 @@ class BinaryTree {
   }
 
   public add(element: any): any {
-    const newNode = new TreeNode(element);
+    const newNode = new BinaryNode(element);
 
     if (this.root === null) {
       this.root = newNode;

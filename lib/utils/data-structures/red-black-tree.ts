@@ -1,23 +1,4 @@
-import { side } from '../interfaces/data-structure.enum';
-
-const RED: boolean = true;
-const BLACK: boolean = false;
-
-class Nodes {
-  public key: any;
-  public element: any;
-  public left: any;
-  public right: any;
-  public color: boolean;
-
-  constructor(key: any, element: any) {
-    this.key = key;
-    this.element = element;
-    this.left = null;
-    this.right = null;
-    this.color = BLACK;
-  }
-}
+import { side, RED, BLACK, RedBlackNode } from '../interfaces/data-structure.enum';
 
 class RedBlackTree {
   private root: any;
@@ -44,7 +25,7 @@ class RedBlackTree {
   private addRoot(node: any, key: any, element: any): any {
     if (!node) {
       this.size++;
-      return new Nodes(key, element);
+      return new RedBlackNode(key, element);
     }
     if (key < node.key) {
       node.left = this.addRoot(node.left, key, element);

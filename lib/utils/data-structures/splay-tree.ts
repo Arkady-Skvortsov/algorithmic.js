@@ -1,18 +1,4 @@
-import { side } from '../interfaces/data-structure.enum';
-
-class Nodes {
-  public key: any;
-  public element: any;
-  public left: any;
-  public right: any;
-
-  constructor(key: any, element: any) {
-    this.key = key;
-    this.element = element;
-    this.right = null;
-    this.left = null;
-  }
-}
+import { side, SplayNode } from '../interfaces/data-structure.enum';
 
 class SplayTree {
   private root: any;
@@ -41,11 +27,17 @@ class SplayTree {
 
   public peek() {}
 
-  public isEmpty() {}
+  public isEmpty(): boolean {
+    return this.size === 0;
+  }
 
-  public getSize() {}
+  public getSize(): number {
+    return this.size;
+  }
 
-  public print() {}
+  public print(): Object {
+    return {...this.root}
+  }
 }
 
 const splayTree = new SplayTree();
