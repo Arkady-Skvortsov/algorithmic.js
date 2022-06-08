@@ -137,6 +137,8 @@ class RedBlackTree {
   }
 
   public leftRotate(node: any): any {
+    node = this.find(node);
+
     let tmp = node.right;
 
     node.right = tmp.left;
@@ -148,6 +150,8 @@ class RedBlackTree {
   }
 
   public rightRotate(node: any): any {
+    node = this.find(node);
+ 
     let tmp = node.left;
 
     node.left = tmp.right;
@@ -156,6 +160,21 @@ class RedBlackTree {
     node.color = RED;
 
     return tmp;
+  }
+
+  public invertTree(root = this.root): any {
+    if (root === null) return;
+
+    let temp;
+
+    this.invertTree(root.left);
+    this.invertTree(root.right);
+
+    temp = root.left;
+    root.left = root.right;
+    root.right = temp;
+
+    return root;
   }
 
   public flipColors(node: any): void {

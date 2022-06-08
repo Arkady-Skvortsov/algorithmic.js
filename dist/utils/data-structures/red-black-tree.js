@@ -1,22 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RedBlackTree = void 0;
-const RED = true;
-const BLACK = false;
-class Nodes {
-    key;
-    element;
-    left;
-    right;
-    color;
-    constructor(key, element) {
-        this.key = key;
-        this.element = element;
-        this.left = null;
-        this.right = null;
-        this.color = BLACK;
-    }
-}
+const data_structure_enum_1 = require("../interfaces/data-structure.enum");
 class RedBlackTree {
     root;
     size;
@@ -28,16 +13,16 @@ class RedBlackTree {
         return this.root.element;
     }
     isRed(node) {
-        return !node ? BLACK : node.color;
+        return !node ? data_structure_enum_1.BLACK : node.color;
     }
     add(key, element) {
         this.root = this.addRoot(this.root, key, element);
-        this.root.color = BLACK;
+        this.root.color = data_structure_enum_1.BLACK;
     }
     addRoot(node, key, element) {
         if (!node) {
             this.size++;
-            return new Nodes(key, element);
+            return new data_structure_enum_1.RedBlackNode(key, element);
         }
         if (key < node.key) {
             node.left = this.addRoot(node.left, key, element);
@@ -139,25 +124,38 @@ class RedBlackTree {
         return visited;
     }
     leftRotate(node) {
+        node = this.find(node);
         let tmp = node.right;
         node.right = tmp.left;
         tmp.left = node;
         tmp.color = node.color;
-        node.color = RED;
+        node.color = data_structure_enum_1.RED;
         return tmp;
     }
     rightRotate(node) {
+        node = this.find(node);
         let tmp = node.left;
         node.left = tmp.right;
         tmp.right = node;
         tmp.color = node.color;
-        node.color = RED;
+        node.color = data_structure_enum_1.RED;
         return tmp;
     }
+    invertTree(root = this.root) {
+        if (root === null)
+            return;
+        let temp;
+        this.invertTree(root.left);
+        this.invertTree(root.right);
+        temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        return root;
+    }
     flipColors(node) {
-        node.color = RED;
-        node.left.color = BLACK;
-        node.right.color = BLACK;
+        node.color = data_structure_enum_1.RED;
+        node.left.color = data_structure_enum_1.BLACK;
+        node.right.color = data_structure_enum_1.BLACK;
     }
     has(key) {
         return this.find(key) ? true : false;
@@ -266,11 +264,4 @@ class RedBlackTree {
     }
 }
 exports.RedBlackTree = RedBlackTree;
-const rbt = new RedBlackTree();
-rbt.add('A', 12);
-rbt.add('B', 100);
-rbt.add('C', 123);
-rbt.add('H', 111);
-rbt.remove('J');
-console.log(rbt.print());
 //# sourceMappingURL=red-black-tree.js.map

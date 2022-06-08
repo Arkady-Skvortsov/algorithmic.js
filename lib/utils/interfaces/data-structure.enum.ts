@@ -1,16 +1,3 @@
-type dataStructureType =
-  | 'STACK'
-  | 'GRAPH'
-  | 'QUEUE'
-  | 'HEAP'
-  | 'LINKED-LIST'
-  | 'HASH-TABLE'
-  | 'BLOOM-FILTER'
-  | 'PRIORITY-QUEUE'
-  | 'BINARY-TREE'
-  | 'RED-BLACK-TREE'
-  | 'SPLAY-TREE'
-  | 'CIRCULAR-BUFFER';
 type side = 'left' | 'right';
 type heapType = 'min' | 'max';
 type rbtType = 'red' | 'black';
@@ -73,7 +60,6 @@ class SplayNode extends BinaryNode {
 }
 
 export {
-  dataStructureType,
   priorityQueue,
   graph,
   IdataStructure,

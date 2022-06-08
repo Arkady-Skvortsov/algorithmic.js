@@ -1,16 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BinaryTree = void 0;
-class TreeNode {
-    element;
-    left;
-    right;
-    constructor(element) {
-        this.element = element;
-        this.left = null;
-        this.right = null;
-    }
-}
+const data_structure_enum_1 = require("../interfaces/data-structure.enum");
 class BinaryTree {
     root;
     size;
@@ -19,7 +10,7 @@ class BinaryTree {
         this.size = 0;
     }
     add(element) {
-        const newNode = new TreeNode(element);
+        const newNode = new data_structure_enum_1.BinaryNode(element);
         if (this.root === null) {
             this.root = newNode;
             return this;

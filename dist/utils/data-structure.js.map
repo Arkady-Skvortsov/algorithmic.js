@@ -1,1 +1,1 @@
-{"version":3,"file":"data-structure.js","sourceRoot":"","sources":["../../lib/utils/data-structure.ts"],"names":[],"mappings":";;;AAEA,MAAM,aAAa;IACV,MAAM,CAAC,IAAuB,IAAQ,CAAC;CAC/C;AAEQ,sCAAa"}
+{"version":3,"file":"data-structure.js","sourceRoot":"","sources":["../../lib/utils/data-structure.ts"],"names":[],"mappings":";;;AAAA,+DAA2D;AAG3D,MAAM,aAAa;IACV,MAAM,CAAC,IAAuB;QACnC,IAAG,IAAI,KAAK,aAAa;YAAE,OAAO,IAAI,wBAAU,EAAE,CAAA;IACpD,CAAC;CACF;AAEQ,sCAAa"}

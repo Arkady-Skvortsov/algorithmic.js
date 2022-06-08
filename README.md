@@ -2,16 +2,16 @@
 
 # About
 
-[Algorithms](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/ALGORITHM.md)<br />
-[Data Structures](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/DATA-STRUCTURE.md)<br />
-[BIG-O-NOTATION](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/BIG-O-NOTATION.md)<br />
+[Algorithms](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/docs/ALGORITHM.md)<br />
+[Data Structures](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/docs/DATA-STRUCTURE.md)<br />
+[BIG-O-NOTATION](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/docs/BIG-O-NOTATION.md)<br />
 ^
 |
 implementation for Javascript/Typescript
 
 # Methods docs
 
-If you want to know how working a library, here: [Methods](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/METHODS.md)
+If you want to know how working a library, here: [Methods](https://github.com/Arkady-Skvortsov/algorithm.js/blob/main/docs/METHODS.md)
 
 # "Why do I need to use algorithms ?" - answer here
 
@@ -34,9 +34,9 @@ I noticed that we (JS) do not have a normal LIBRARY for using algorithms, for ex
 ```js
 const { Algorithm, DataStructure, BigONotation } = require('algorithm.js');
 
-const linearSearch = new Algorithm().create('LINEAR-SEARCH');
-const stack = new DataStructure().create('STACK');
-const linearTime = new BigONotation().create('LINEAR-TIME');
+const linearSearch = new Algorithm().linearSearch();
+const stack = new DataStructure().stack();
+const linearTime = new BigONotation().linearTime();
 
 const ls = linearSearch.run([1, 2, 4, 7, 10, 23, 26, 30, 45]);
 
