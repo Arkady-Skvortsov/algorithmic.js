@@ -11,12 +11,14 @@ class SplayTree {
     }
     add(key, element) {
         if (this.isEmpty()) {
-            return;
+            this.root = new data_structure_enum_1.SplayNode(key, element);
         }
-        if (this.root.key == key) {
+        // Splay on the key to move the last node on the search path for
+        // the key to the root of the tree.
+        this.splay(key);
+        if (this.root.key == key)
             return;
-        }
-        var node = new data_structure_enum_1.SplayNode(key, element);
+        let node = new data_structure_enum_1.SplayNode(key, element);
         if (key > this.root.key) {
             node.left = this.root;
             node.right = this.root.right;
@@ -81,21 +83,36 @@ class SplayTree {
         current.right = dummy.left;
         this.root = current;
     }
-    zig() { }
-    zigZig() { }
-    zigZag() { }
+    zig(root = this.root) {
+    }
+    zigZig(root = this.root) { }
+    zigZag(root = this.root) { }
     clear() {
         this.root = null;
+    }
+    rightRotate(node) {
+        node = this.find(node);
+        let tmp = node.left;
+        node.left = tmp.right;
+        tmp.right = node;
+        return tmp;
+    }
+    leftRotate(node) {
+        node = this.find(node);
+        let tmp = node.right;
+        node.right = tmp.left;
+        tmp.left = node;
+        return tmp;
     }
     has(element) {
         return this.find(element) ? true : false;
     }
-    find(element) {
+    find(key) {
         if (this.root === null)
             return false;
         let current = this.root;
-        while (current.element !== element) {
-            if (element < current.element) {
+        while (current.key !== key) {
+            if (key < current.key) {
                 current = current.left;
             }
             else {
@@ -106,12 +123,74 @@ class SplayTree {
         }
         return { ...current };
     }
-    findBiggestTreeNode() { }
-    findSmallestTreeNode() { }
-    removeSmallestTreeNode() { }
-    removeBiggestTreeNode() { }
-    breadthFirstSearch() { }
+    findBiggestTreeNode() {
+        return Math.max(...this.breadthFirstSearch());
+    }
+    next(side) {
+        let current = this.root;
+        if (side === 'left') {
+            if (current.left !== null) {
+                current = current.left;
+                this.root = current;
+                return this;
+            }
+        }
+        if (current.right !== null) {
+            current = current.right;
+            this.root = current;
+            return this;
+        }
+    }
+    findSmallestTreeNode() {
+        return Math.min(...this.breadthFirstSearch());
+    }
+    removeSmallestTreeNode() {
+        const smallestTree = Math.min(...this.breadthFirstSearch());
+        this.root = this.removeTreeNode(this.root, smallestTree);
+    }
+    removeBiggestTreeNode() {
+        const biggestTree = Math.max(...this.breadthFirstSearch());
+        this.root = this.removeTreeNode(this.root, biggestTree);
+    }
+    removeTreeNode(key, element) {
+        if (this.isEmpty())
+            this.root = new data_structure_enum_1.SplayNode(key, element);
+        // Splay on the key to move the last node on the search path for
+        // the key to the root of the tree.
+        this.splay(key);
+        if (this.root.key == key)
+            return;
+        let node = new data_structure_enum_1.SplayNode(key, element);
+        if (key > this.root.key) {
+            node.left = this.root;
+            node.right = this.root.right;
+            this.root.right = null;
+        }
+        else {
+            node.right = this.root;
+            node.left = this.root.left;
+            this.root.left = null;
+        }
+        this.root = node;
+    }
+    breadthFirstSearch() {
+        let visited = [];
+        let queue = [];
+        let current = this.root;
+        queue.push(current);
+        while (queue.length) {
+            current = queue.shift();
+            visited.push(current.element);
+            if (current.left)
+                queue.push(current.left);
+            if (current.right)
+                queue.push(current.right);
+        }
+        return visited;
+    }
     summOfTree() {
+        let arr = this.breadthFirstSearch();
+        return arr.reduce((first, second) => first + second, 0);
     }
     preOrder() {
         let visited = [];
@@ -153,7 +232,18 @@ class SplayTree {
         return visited;
     }
     getRootOfTree() {
-        return this.root.element;
+        return this.root.key;
+    }
+    invertTree(root = this.root) {
+        if (root === null)
+            return;
+        let temp;
+        this.invertTree(root.left);
+        this.invertTree(root.right);
+        temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        return root;
     }
     peek() { }
     isEmpty() {
@@ -167,12 +257,4 @@ class SplayTree {
     }
 }
 exports.SplayTree = SplayTree;
-const splayTree = new SplayTree();
-splayTree.add("one", 100);
-splayTree.add("two", 400);
-splayTree.add("three", 320);
-splayTree.add("fourth", 20);
-splayTree.add("wefw", 10);
-splayTree.add("wefer232r23", 10000);
-console.log(splayTree.print());
 //# sourceMappingURL=splay-tree.js.map

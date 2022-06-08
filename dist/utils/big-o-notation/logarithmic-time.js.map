@@ -1,0 +1,1 @@
+{"version":3,"file":"logarithmic-time.js","sourceRoot":"","sources":["../../../lib/utils/big-o-notation/logarithmic-time.ts"],"names":[],"mappings":";;;AAAA,MAAM,eAAe;IACjB,gBAAe,CAAC;IAET,KAAK,CAAC,IAAY;QACrB,OAAO,IAAI,CAAC,GAAG,CAAC,IAAI,CAAC,CAAC;IAC1B,CAAC;CACJ;AAEQ,0CAAe"}

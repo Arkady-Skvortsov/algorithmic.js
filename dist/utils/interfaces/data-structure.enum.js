@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BLACK = exports.RED = exports.SplayNode = exports.RedBlackNode = exports.BinaryNode = exports.IdataStructure = void 0;
+exports.BLACK = exports.RED = exports.SplayNode = exports.RedBlackNode = exports.HeapNode = exports.BinaryNode = exports.IdataStructure = void 0;
 const BLACK = false;
 exports.BLACK = BLACK;
 const RED = true;
@@ -37,4 +37,10 @@ class SplayNode extends BinaryNode {
     }
 }
 exports.SplayNode = SplayNode;
+class HeapNode extends BinaryNode {
+    constructor(element) {
+        super(element);
+    }
+}
+exports.HeapNode = HeapNode;
 //# sourceMappingURL=data-structure.enum.js.map

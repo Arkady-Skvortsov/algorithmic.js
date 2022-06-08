@@ -59,6 +59,12 @@ class SplayNode extends BinaryNode {
   }
 }
 
+class HeapNode extends BinaryNode {
+  constructor(element: any) {
+    super(element);
+  }
+}
+
 export {
   priorityQueue,
   graph,
@@ -67,6 +73,7 @@ export {
   rbtType,
   heapType,
   BinaryNode,
+  HeapNode,
   RedBlackNode,
   SplayNode,
   RED,

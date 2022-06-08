@@ -13,7 +13,7 @@ class RedBlackTree {
         return this.root.element;
     }
     isRed(node) {
-        return !node ? data_structure_enum_1.BLACK : node.color;
+        return !this.find(node) ? data_structure_enum_1.BLACK : data_structure_enum_1.RED;
     }
     add(key, element) {
         this.root = this.addRoot(this.root, key, element);
@@ -50,6 +50,7 @@ class RedBlackTree {
     }
     remove(element) {
         this.root = this.removeTreeNode(this.root, element);
+        this.size--;
     }
     removeTreeNode(current, element) {
         if (current === null)
@@ -85,28 +86,36 @@ class RedBlackTree {
             element = element.left;
         return element;
     }
+    findSmallestTrNode() {
+        return Math.min(...this.breadthFirstSearch());
+    }
     peek(side) {
         let current = this.root;
         if (side === 'left') {
             while (current.left !== null) {
                 current = current.left;
                 if (current.left === null)
-                    return current.element;
+                    return { ...current };
             }
         }
         while (current.right !== null) {
             current = current.right;
             if (current.right === null)
-                return current.element;
+                return { ...current };
         }
+    }
+    findBiggestTreeNode() {
+        return Math.max(...this.breadthFirstSearch());
     }
     removeSmallestTreeNode() {
         const smallestTree = Math.min(...this.breadthFirstSearch());
         this.root = this.removeTreeNode(this.root, smallestTree);
+        this.size--;
     }
     removeBiggestTreeNode() {
         const biggestTree = Math.max(...this.breadthFirstSearch());
         this.root = this.removeTreeNode(this.root, biggestTree);
+        this.size--;
     }
     breadthFirstSearch() {
         let visited = [];
@@ -148,8 +157,10 @@ class RedBlackTree {
         this.invertTree(root.left);
         this.invertTree(root.right);
         temp = root.left;
-        root.left = root.right;
         root.right = temp;
+        root.left = root.right;
+        root.color = temp.color;
+        temp.color = data_structure_enum_1.RED;
         return root;
     }
     flipColors(node) {
@@ -174,19 +185,20 @@ class RedBlackTree {
         let right = this.findMinHeight(root.right);
         return left < right ? left + 1 : right + 1;
     }
-    findMinNode() {
-        let root = this.root;
-        while (root.left !== null) {
-            root = root.left;
+    next(side) {
+        let current = this.root;
+        if (side === 'left') {
+            if (current.left !== null) {
+                current = current.left;
+                this.root = current;
+                return this;
+            }
         }
-        return root.element;
-    }
-    findMaxNode() {
-        let root = this.root;
-        while (root.right !== null) {
-            root = root.right;
+        if (current.right !== null) {
+            current = current.right;
+            this.root = current;
+            return this;
         }
-        return root.element;
     }
     isBalanced() {
         return this.findMinHeight() >= this.findMaxHeight() - 1;
@@ -241,10 +253,10 @@ class RedBlackTree {
         let visited = [];
         let current = this.root;
         let traverse = (node) => {
-            if (node.left)
+            if (node.left !== null)
                 traverse(node.left);
             visited.push(node.element);
-            if (node.right)
+            if (node.right !== null)
                 traverse(node.right);
         };
         traverse(current);

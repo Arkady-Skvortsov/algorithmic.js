@@ -1,111 +1,90 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Heap = void 0;
-class HeapNode {
-    element;
-    left;
-    right;
-    constructor(element) {
-        this.element = element;
-        this.left = null;
-        this.right = null;
-    }
-}
+;
 class Heap {
-    root;
-    size;
+    heap;
     constructor() {
-        this.root = null;
-        this.size = 0;
+        this.heap = [];
     }
     add(element) {
-        const newNode = new HeapNode(element);
-        if (this.root === null) {
-            this.root = newNode;
-            return this;
+        this.heap.push(element);
+    }
+    maxHeapify(arr, n, i) {
+        let largest = i;
+        let l = 2 * i + 1;
+        let r = 2 * i + 2;
+        if (l < n && arr[l] > arr[largest]) {
+            largest = l;
         }
-        let current = this.root;
-        while (current) {
-            if (element === current.element)
-                return;
-            if (element < current.element) {
-                if (current.left === null) {
-                    current.left = newNode;
-                    return this;
-                }
-                current = current.left;
-            }
-            else {
-                if (current.right === null) {
-                    current.right = newNode;
-                    return this;
-                }
-                current = current.right;
-            }
-            this.size++;
+        if (r < n && arr[r] > arr[largest]) {
+            largest = r;
+        }
+        if (largest != i) {
+            let temp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = temp;
+            this.maxHeapify(arr, n, largest);
+        }
+    }
+    minHeapify(arr, n, i) {
+        let smallest = i;
+        let l = 2 * i + 1;
+        let r = 2 * i + 2;
+        if (l < n && arr[l] < arr[smallest]) {
+            smallest = l;
+        }
+        if (r < n && arr[r] < arr[smallest]) {
+            smallest = r;
+        }
+        if (smallest != i) {
+            let temp = arr[i];
+            arr[i] = arr[smallest];
+            arr[smallest] = temp;
+            this.minHeapify(arr, n, smallest);
         }
     }
     getRootOfHeap() {
-        return this.root.element;
+        return this.heap[0];
     }
     remove(element) {
-        this.root = this.removeTreeNode(this.root, element);
+        const size = this.heap.length;
+        let i;
+        for (i = 0; i < size; i++) {
+            if (this.heap[i] === element) {
+                break;
+            }
+        }
+        [this.heap[i], this.heap[size - 1]] = [this.heap[size - 1], this.heap[i]];
+        this.heap.splice(size - 1);
     }
-    removeTreeNode(current, element) {
-        if (current === null)
-            return current;
-        if (element === current.element) {
-            if (current.left === null && current.right === null) {
-                return null;
-            }
-            else if (current.left === null) {
-                return current.right;
-            }
-            else if (current.right === null) {
-                return current.left;
-            }
-            else {
-                const tempNode = this.findSmallestTreeNode(current.right);
-                current.element = tempNode.element;
-                current.right = this.removeTreeNode(current.right, tempNode.element);
-                return current;
-            }
-        }
-        else if (element < current.element) {
-            current.left = this.removeTreeNode(current.left, element);
-            return current;
-        }
-        else {
-            current.right = this.removeTreeNode(current.right, element);
-            return current;
-        }
+    findSmallestHeapNode() {
+        return Math.min(...this.heap);
     }
-    findSmallestTreeNode(element) {
-        while (element.left !== null)
-            element = element.left;
-        return element;
+    findBiggestHeapNode() {
+        return Math.max(...this.heap);
+    }
+    removeSmallestTreeNode() {
+        this.heap.splice(0, this.findSmallestHeapNode());
+    }
+    removeBiggestTreeNode() {
+        console.log(this.findBiggestHeapNode());
     }
     find(element) {
-        if (this.root === null)
-            return false;
-        let current = this.root;
-        while (current.element !== element) {
-            if (element < current.element) {
-                current = current.left;
-            }
-            else {
-                current = current.right;
-            }
-            if (current === null)
-                return null;
-        }
-        return { ...current };
+        return this.heap.filter(h => h === element).join();
+    }
+    peek() {
+        return this.heap[this.heap.length - 1];
     }
     clear() {
-        this.root = null;
+        this.heap = [];
     }
     turnIn(options) {
-        if (options === 'max') {
+        for (let i = parseInt(String(this.heap.length / 2 - 1)); i >= 0; i--) {
+            if (options === 'max') {
+                this.maxHeapify(this.heap, this.heap.length, i);
+            }
+            this.minHeapify(this.heap, this.heap.length, i);
         }
         return this;
     }
@@ -113,15 +92,19 @@ class Heap {
         return this.find(element) ? true : false;
     }
     getSize() {
-        return this.size - 1;
+        return this.heap.length;
     }
     isEmpty() {
         return this.getSize() === 0;
     }
     print() {
-        return { ...this.root };
+        return { ...this.heap };
     }
 }
 exports.Heap = Heap;
 const heap = new Heap();
+heap.add(100);
+heap.add(20);
+heap.add(50);
+console.log(heap.turnIn("max").getRootOfHeap());
 //# sourceMappingURL=heap.js.map

@@ -14,7 +14,7 @@ class RedBlackTree {
   }
 
   public isRed(node: any): boolean {
-    return !node ? BLACK : node.color;
+    return !this.find(node) ? BLACK : RED;
   }
 
   public add(key: any, element: any): void {
@@ -54,6 +54,8 @@ class RedBlackTree {
 
   public remove(element: any): void {
     this.root = this.removeTreeNode(this.root, element);
+
+    this.size--;
   }
 
   private removeTreeNode(current: any, element: any): any {
@@ -88,6 +90,10 @@ class RedBlackTree {
     return element;
   }
 
+  public findSmallestTrNode(): any {
+    return Math.min(...this.breadthFirstSearch());
+  }
+
   public peek(side: side): any {
     let current = this.root;
 
@@ -95,30 +101,38 @@ class RedBlackTree {
       while (current.left !== null) {
         current = current.left;
 
-        if (current.left === null) return current.element;
+        if (current.left === null) return {...current};
       }
     }
 
     while (current.right !== null) {
       current = current.right;
 
-      if (current.right === null) return current.element;
+      if (current.right === null) return {...current};
     }
+  }
+
+  public findBiggestTreeNode(): any {
+    return Math.max(...this.breadthFirstSearch());
   }
 
   public removeSmallestTreeNode(): void {
     const smallestTree = Math.min(...this.breadthFirstSearch());
 
     this.root = this.removeTreeNode(this.root, smallestTree);
+
+    this.size--;
   }
 
   public removeBiggestTreeNode(): void {
     const biggestTree = Math.max(...this.breadthFirstSearch());
 
     this.root = this.removeTreeNode(this.root, biggestTree);
+    
+    this.size--;
   }
 
-  public breadthFirstSearch() {
+  public breadthFirstSearch(): any[] {
     let visited = [];
     let queue = [];
     let current = this.root;
@@ -171,8 +185,10 @@ class RedBlackTree {
     this.invertTree(root.right);
 
     temp = root.left;
-    root.left = root.right;
     root.right = temp;
+    root.left = root.right;
+    root.color = temp.color;
+    temp.color = RED;
 
     return root;
   }
@@ -204,25 +220,27 @@ class RedBlackTree {
 
     return left < right ? left + 1 : right + 1;
   }
+  
+  public next(side: side): any {
+    let current = this.root;
 
-  public findMinNode(): any {
-    let root = this.root;
+    if (side === 'left') {
+      if (current.left !== null) {
+        current = current.left;
 
-    while (root.left !== null) {
-      root = root.left;
+        this.root = current;
+
+        return this;
+      }
     }
 
-    return root.element;
-  }
+    if (current.right !== null) {
+      current = current.right;
 
-  public findMaxNode(): any {
-    let root = this.root;
+      this.root = current;
 
-    while (root.right !== null) {
-      root = root.right;
+      return this;
     }
-
-    return root.element;
   }
 
   public isBalanced(): boolean {
@@ -288,9 +306,11 @@ class RedBlackTree {
     let current = this.root;
 
     let traverse = (node: any) => {
-      if (node.left) traverse(node.left);
+      if (node.left !== null) traverse(node.left);
+
       visited.push(node.element);
-      if (node.right) traverse(node.right);
+
+      if (node.right !== null) traverse(node.right);
     };
 
     traverse(current);

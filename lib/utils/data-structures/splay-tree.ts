@@ -8,6 +8,31 @@ class SplayTree {
     this.root = null;
     this.size = 0;
   }
+  
+  public add(key: any, element: any): void {
+    if (this.isEmpty()) {
+        this.root = new SplayNode(key, element);
+    }
+    // Splay on the key to move the last node on the search path for
+    // the key to the root of the tree.
+    this.splay(key);
+    
+    if (this.root.key == key) return;
+    
+    let node = new SplayNode(key, element);
+
+      if (key > this.root.key) {
+        node.left = this.root;
+        node.right = this.root.right;
+        this.root.right = null;
+      } else {
+        node.right = this.root;
+        node.left = this.root.left;
+        this.root.left = null;
+      }
+    
+    this.root = node; 
+  }
 
   public splay(key: any): any {
     if (this.isEmpty()) {
@@ -60,27 +85,49 @@ class SplayTree {
           this.root = current;
   }
 
-  public zig() {}
+  public zig(root = this.root) {
+      
+  }
 
-  public zigZig() {}
+  public zigZig(root = this.root) {}
 
-  public zigZag() {}
+  public zigZag(root = this.root) {}
 
   public clear(): void {
     this.root = null;
+  }
+
+  public rightRotate(node: any): any {
+    node = this.find(node);
+    let tmp = node.left;
+
+    node.left = tmp.right;
+    tmp.right = node;
+
+    return tmp;
+  }
+
+  public leftRotate(node: any): any {
+    node = this.find(node);
+    let tmp = node.right;
+
+    node.right = tmp.left;
+    tmp.left = node;
+
+    return tmp;
   }
 
   public has(element: any): boolean {
     return this.find(element) ? true : false;
   }
 
-  public find(element: any): any {
+  public find(key: any): any {
     if (this.root === null) return false;
 
     let current = this.root;
 
-    while (current.element !== element) {
-      if (element < current.element) {
+    while (current.key !== key) {
+      if (key < current.key) {
         current = current.left;
       } else {
         current = current.right;
@@ -92,18 +139,95 @@ class SplayTree {
     return { ...current };
   }
 
-  public findBiggestTreeNode() {}
+  public findBiggestTreeNode(): any {
+    return Math.max(...this.breadthFirstSearch())
+  }
 
-  public findSmallestTreeNode() {}
+  public next(side: side): any {
+    let current = this.root;
 
-  public removeSmallestTreeNode() {}
+    if (side === 'left') {
+      if (current.left !== null) {
+        current = current.left;
 
-  public removeBiggestTreeNode() {}
+        this.root = current;
 
-  public breadthFirstSearch() {}
+        return this;
+      }
+    }
+
+    if (current.right !== null) {
+      current = current.right;
+
+      this.root = current;
+
+      return this;
+    }
+  }
+
+  public findSmallestTreeNode(): any {
+    return Math.min(...this.breadthFirstSearch());
+  }
+
+  public removeSmallestTreeNode(): void {
+    const smallestTree = Math.min(...this.breadthFirstSearch());
+
+    this.root = this.removeTreeNode(this.root, smallestTree);
+  }
+
+  public removeBiggestTreeNode(): void {
+    const biggestTree = Math.max(...this.breadthFirstSearch());
+
+    this.root = this.removeTreeNode(this.root, biggestTree);
+  }
+
+  public removeTreeNode(key: any, element: any): void {
+    if (this.isEmpty()) this.root = new SplayNode(key, element);
+
+      // Splay on the key to move the last node on the search path for
+      // the key to the root of the tree.
+      
+      this.splay(key);
+
+      if (this.root.key == key) return;
+
+      let node = new SplayNode(key, element);
+
+      if (key > this.root.key) {
+          node.left = this.root;
+          node.right = this.root.right;
+          this.root.right = null; 
+      } else {
+          node.right = this.root;
+          node.left = this.root.left;
+          this.root.left = null;
+      }
+
+      this.root = node;
+  }
+
+  public breadthFirstSearch() {
+    let visited = [];
+    let queue = [];
+    let current = this.root;
+
+    queue.push(current);
+
+    while (queue.length) {
+      current = queue.shift();
+      visited.push(current.element);
+
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+    }
+
+    return visited;
+  }
   
-  public summOfTree() {
+  public summOfTree(): number {
+    let arr = this.breadthFirstSearch();
 
+    return arr.reduce((first, second) => first + second, 0);
   }
 
   public preOrder(): any[] {
@@ -150,10 +274,24 @@ class SplayTree {
 
     return visited;
   }
-
   
-  public getRootOfTree() {
-    return this.root.element;
+  public getRootOfTree(): any {
+    return this.root.key;
+  }
+
+  public invertTree(root = this.root): any {
+    if (root === null) return;
+
+    let temp;
+
+    this.invertTree(root.left);
+    this.invertTree(root.right);
+
+    temp = root.left;
+    root.left = root.right;
+    root.right = temp;
+
+    return root;
   }
 
   public peek() {}
@@ -170,7 +308,5 @@ class SplayTree {
     return {...this.root}
   }
 }
-
-const splayTree = new SplayTree();
 
 export { SplayTree };

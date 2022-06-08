@@ -1,145 +1,133 @@
-import { heapType } from '../interfaces/data-structure.enum';
-
-class HeapNode {
-  public element: any;
-  public left: any;
-  public right: any;
-
-  constructor(element: any) {
-    this.element = element;
-    this.left = null;
-    this.right = null;
-  }
-}
+import { heapType } from '../interfaces/data-structure.enum';;
 
 class Heap {
-  private root: any;
-  private size: number;
+  private heap: number[];
 
   constructor() {
-    this.root = null;
-    this.size = 0;
+    this.heap = [];
   }
 
-  public add(element: any) {
-    const newNode = new HeapNode(element);
+  public add(element: any): void {
+    this.heap.push(element);
+  }
 
-    if (this.root === null) {
-      this.root = newNode;
-      return this;
-    }
+  private maxHeapify(arr: number[], n: number, i: number): void {
+    let largest = i;
+    let l = 2 * i + 1;
+    let r = 2 * i + 2;
 
-    let current: any = this.root;
+     if (l < n && arr[l] > arr[largest]) {
+           largest = l;
+     }
 
-    while (current) {
-      if (element === current.element) return;
+     if (r < n && arr[r] > arr[largest]) {
+          largest = r;
+     }
 
-      if (element < current.element) {
-        if (current.left === null) {
-          current.left = newNode;
-          return this;
-        }
+     if (largest != i) {
+          let temp = arr[i];
+          arr[i] = arr[largest];
+          arr[largest] = temp;
 
-        current = current.left;
-      } else {
-        if (current.right === null) {
-          current.right = newNode;
-          return this;
-        }
-
-        current = current.right;
+        this.maxHeapify(arr, n, largest); 
       }
+  }
 
-      this.size++;
-    }
+  private minHeapify(arr: number[], n: number, i: number): void {
+    let smallest = i;
+    let l = 2 * i + 1;
+    let r = 2 * i + 2;
+
+     if (l < n && arr[l] < arr[smallest]) {
+           smallest = l; 
+     }
+
+     if (r < n && arr[r] < arr[smallest]) {
+          smallest = r; 
+     }
+
+     if (smallest != i) { 
+          let temp = arr[i]; 
+          arr[i] = arr[smallest]; 
+          arr[smallest] = temp; 
+
+        this.minHeapify(arr, n, smallest); 
+      } 
   }
 
   public getRootOfHeap(): any {
-    return this.root.element;
+    return this.heap[0];
   }
 
   public remove(element: any): void {
-    this.root = this.removeTreeNode(this.root, element);
-  }
+    const size = this.heap.length;
+    let i;
 
-  private removeTreeNode(current: any, element: any): any {
-    if (current === null) return current;
-
-    if (element === current.element) {
-      if (current.left === null && current.right === null) {
-        return null;
-      } else if (current.left === null) {
-        return current.right;
-      } else if (current.right === null) {
-        return current.left;
-      } else {
-        const tempNode = this.findSmallestTreeNode(current.right);
-        current.element = tempNode.element;
-
-        current.right = this.removeTreeNode(current.right, tempNode.element);
-        return current;
+    for(i = 0; i < size; i++){
+      if(this.heap[i] === element) {
+        break;
       }
-    } else if (element < current.element) {
-      current.left = this.removeTreeNode(current.left, element);
-      return current;
-    } else {
-      current.right = this.removeTreeNode(current.right, element);
-      return current;
     }
+    
+    [this.heap[i], this.heap[size - 1]] = [this.heap[size - 1], this.heap[i]];
+    this.heap.splice(size - 1);
   }
 
-  private findSmallestTreeNode(element: any): any {
-    while (element.left !== null) element = element.left;
+  public findSmallestHeapNode(): any {
+    return Math.min(...this.heap);
+  }
 
-    return element;
+  public findBiggestHeapNode(): any {
+    return Math.max(...this.heap);
+  }
+
+  public removeSmallestTreeNode(): void {
+    this.heap.splice(0, this.findSmallestHeapNode());
+  }
+
+  public removeBiggestTreeNode(): void {
+    console.log(this.findBiggestHeapNode());
   }
 
   public find(element: any): any {
-    if (this.root === null) return false;
+    return this.heap.filter(h => h === element).join();
+  }
 
-    let current = this.root;
-
-    while (current.element !== element) {
-      if (element < current.element) {
-        current = current.left;
-      } else {
-        current = current.right;
-      }
-
-      if (current === null) return null;
-    }
-
-    return { ...current };
+  public peek(): any {
+    return this.heap[this.heap.length - 1];
   }
 
   public clear(): void {
-    this.root = null;
+    this.heap = [];
   }
 
   public turnIn(options: heapType) {
-    if (options === 'max') {
+    for (let i = parseInt(String(this.heap.length / 2 - 1)); i >= 0; i--) {
+      if (options === 'max') {
+        this.maxHeapify(this.heap, this.heap.length, i); 
+      }
+
+      this.minHeapify(this.heap, this.heap.length, i);
     }
 
     return this;
   }
 
-  public has(element: any): boolean {
+  public has(element: number): boolean {
     return this.find(element) ? true : false;
   }
 
   public getSize(): number {
-    return this.size - 1;
+    return this.heap.length ;
   }
 
   public isEmpty(): boolean {
     return this.getSize() === 0;
   }
 
-  public print(): Object {
-    return { ...this.root };
+  public print(): any[] {
+    return { ...this.heap };
   }
 }
-
-const heap = new Heap();
 
 export { Heap };

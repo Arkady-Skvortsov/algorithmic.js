@@ -1,0 +1,1 @@
+{"version":3,"file":"linearithmic-time.js","sourceRoot":"","sources":["../../../lib/utils/big-o-notation/linearithmic-time.ts"],"names":[],"mappings":";;;AAAA,MAAM,gBAAgB;IAClB,gBAAe,CAAC;IAET,KAAK,CAAC,IAAY;QACrB,OAAO,IAAI,GAAG,IAAI,CAAC,GAAG,CAAC,IAAI,CAAC,CAAC;IACjC,CAAC;CACJ;AAEQ,4CAAgB"}

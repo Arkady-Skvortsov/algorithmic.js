@@ -1,0 +1,1 @@
+{"version":3,"file":"quadratic-time.js","sourceRoot":"","sources":["../../../lib/utils/big-o-notation/quadratic-time.ts"],"names":[],"mappings":";;;AAAA,MAAM,aAAa;IACf,gBAAe,CAAC;IAET,KAAK,CAAC,IAAY;QACrB,OAAO,IAAI,IAAI,CAAC,CAAC;IACrB,CAAC;CACJ;AAEQ,sCAAa"}
