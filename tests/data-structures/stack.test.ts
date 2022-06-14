@@ -1,9 +1,24 @@
+import { Stack } from "../../lib/utils/data-structures/stack";
+const mockStack = jest.fn();
+
+jest.mock("../../lib/utils/data-structures/stack", () => {
+  return jest.fn().mockImplementation(() => {
+    return { Stacks: mockStack }
+  })
+});
+
 describe('Stack', () => {
-  beforeAll(() => {});
+  beforeAll(() => {
+    
+  });
 
-  xit('Stack should be defined', () => {});
+  it('Stack should be defined', () => {
+    expect(Stack).toBeDefined();
+  });
 
-  xit('Should be push in stack', () => {});
+  it('Should be push in stack', () => {
+    
+  });
 
   xit('Should be pop from stack', () => {});
 
