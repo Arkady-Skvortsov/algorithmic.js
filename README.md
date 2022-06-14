@@ -1,4 +1,4 @@
-# algorithm.js
+# algorithmic.js
 
 # About
 
@@ -28,7 +28,7 @@ I noticed that we (JS) do not have a normal LIBRARY for using algorithms, for ex
 # How to use ?
 
 ```sh
-  npm i algroithm.js
+  npm i algroithmic.js
 ```
 
 ```js
